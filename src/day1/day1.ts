@@ -1,4 +1,4 @@
-import {DAY_1} from "../inputs";
+import {DAY_1} from "./day1_inputs";
 
 export function day1Part1(): number {
     const RESULT_TO_FIND = 2020;
