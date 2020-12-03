@@ -1,1000 +1,1002 @@
-export const DAY2_INPUTS_STRING  = "8-9 x: xxxxxxxrk\n" +
-    "5-8 f: fxffmfff\n" +
-    "2-5 c: ccspwpc\n" +
-    "1-4 g: gggg\n" +
-    "9-10 l: lllllllllk\n" +
-    "1-3 j: djjfz\n" +
-    "3-4 n: nnnmn\n" +
-    "8-9 l: llllllllc\n" +
-    "4-5 v: vvvvm\n" +
-    "3-4 t: ttnt\n" +
-    "4-5 w: wrwws\n" +
-    "12-14 x: xxxxxxxxxxxcxxxx\n" +
-    "9-10 q: qqqqqqqqtq\n" +
-    "4-5 q: qsktqncqqqdn\n" +
-    "2-7 h: ngkhcthb\n" +
-    "9-11 r: rrqrrrrpcvs\n" +
-    "3-6 c: rccbcc\n" +
-    "7-8 k: xpkmjlxkt\n" +
-    "1-5 l: zcwdhpkvz\n" +
-    "4-11 r: rhmzhrxrdrrtddj\n" +
-    "11-15 g: lggndgggsggggtdggg\n" +
-    "6-12 m: mmmmmmgmmmmmwm\n" +
-    "4-9 z: zzzgzzzzz\n" +
-    "4-9 k: kkkkkkkknk\n" +
-    "9-14 l: fldlllllldqllwj\n" +
-    "1-10 k: sbnxkmtbgdf\n" +
-    "2-3 v: tjzvnfv\n" +
-    "3-4 d: dddd\n" +
-    "1-2 l: ltfwjqjlqpnbqmnj\n" +
-    "2-5 r: rrrrr\n" +
-    "9-10 v: vvvvvvvvvdv\n" +
-    "16-17 j: jjjjnjjrjjjjhjjzqjj\n" +
-    "10-19 q: qqqqpqqqktqqqqqtfhq\n" +
-    "17-18 c: ccccccccccccccccmc\n" +
-    "3-7 f: kcpnxfffpv\n" +
-    "4-7 m: mrzmmtsmmmb\n" +
-    "8-10 l: lmlllllllnlb\n" +
-    "1-3 d: bzndm\n" +
-    "2-13 s: szsssjsssssssss\n" +
-    "3-8 b: bbbwbshbbbb\n" +
-    "15-18 h: hhhhhhhhghhhhhzhhh\n" +
-    "6-10 b: zbbbtbswrn\n" +
-    "12-14 t: nttttttttttstzgt\n" +
-    "7-12 f: vffcmffwfjpk\n" +
-    "3-18 r: frvkrwrlrrdbdrrrrxnr\n" +
-    "12-13 k: kkkpkkkkrkkxkkk\n" +
-    "6-11 b: bbbbblbbbbbw\n" +
-    "4-5 f: tfdjf\n" +
-    "7-8 m: cqmmmzmmmmgm\n" +
-    "2-4 j: jjfx\n" +
-    "3-5 v: xvvvsq\n" +
-    "9-10 s: sssmsssshgsd\n" +
-    "1-6 t: tptbjsttt\n" +
-    "4-15 z: zzzgzzzzzzzzzzz\n" +
-    "4-5 p: mxpnp\n" +
-    "2-3 n: knwfnnj\n" +
-    "10-11 s: sfswsbssgssvp\n" +
-    "12-13 d: dwndddddddlnddrdds\n" +
-    "14-15 k: bcvpdjkkndkmkrg\n" +
-    "10-13 x: xxxxxxxxxnxxz\n" +
-    "5-10 f: fffkffgspffffzcf\n" +
-    "11-12 t: ttttqtttxhtzzttt\n" +
-    "15-16 k: kkkkkkkkkkkkkktk\n" +
-    "6-8 b: bfbbbbtkbb\n" +
-    "2-7 h: hlhhhhgh\n" +
-    "3-11 q: ldbtqbsfkqqcrl\n" +
-    "10-15 q: qqrqqmqqqqfwqfzqqxqq\n" +
-    "3-5 r: ldtrrxrnqrhqnhkrv\n" +
-    "9-10 n: qnkvnnfnznnnnjn\n" +
-    "1-8 w: wwwrwwpxmwsswwzwzww\n" +
-    "1-4 f: zfwtzx\n" +
-    "1-8 w: wwwnnwfv\n" +
-    "9-11 r: jrrfgrrrzdr\n" +
-    "15-18 b: bbbbbbzbbbbbbbsgbb\n" +
-    "16-19 t: sfgfffhscvpdrqtvsmh\n" +
-    "7-8 k: kkkkkkrk\n" +
-    "9-11 z: fszzzzzzszzzcz\n" +
-    "1-14 k: lhkrkkkklkkkpkfkk\n" +
-    "5-6 s: sssscs\n" +
-    "11-13 j: jjjpnjjjjjkjjj\n" +
-    "1-6 x: mxhjgxbt\n" +
-    "9-11 t: xtltttttktg\n" +
-    "4-12 z: zzkdzwzzzzzfzz\n" +
-    "13-16 j: jjjqjjjcjjsjdjjjjj\n" +
-    "13-14 h: bhhhhhhhhhvhhhhhh\n" +
-    "6-7 k: vwllpkb\n" +
-    "1-5 c: sbnmbhcjlczjrc\n" +
-    "2-11 c: skrtgbzdklcxqrwr\n" +
-    "16-17 r: rvnnjknhswckcbrmr\n" +
-    "5-6 b: btbbbnbb\n" +
-    "3-5 c: ccpcm\n" +
-    "3-7 h: hhvhvbhfth\n" +
-    "2-11 d: ddbddlddvdfdwxwxd\n" +
-    "6-8 m: mwmmmmmmmmc\n" +
-    "1-5 l: lgwrlpmnfnzlczkpflt\n" +
-    "4-6 x: cgbncxtwsvjwtbjqxzz\n" +
-    "6-13 h: tnhshhkhhhjsdhrbh\n" +
-    "1-2 s: gpzrf\n" +
-    "12-14 p: pxpzpppfpppppxpp\n" +
-    "2-8 j: jddjjjjtjjqpj\n" +
-    "3-13 v: vkvvvvvvvvvvdvvvvvv\n" +
-    "4-16 b: bbbbbbbbbbbbbzbdb\n" +
-    "5-6 b: bbbbbbb\n" +
-    "2-4 v: vvvhv\n" +
-    "13-14 w: wwwcwwwwwwwwtww\n" +
-    "1-7 g: gdbgpncbdgk\n" +
-    "13-18 g: ggggskgggcgggghgsvr\n" +
-    "15-18 c: cckcccccccccccgccccr\n" +
-    "4-6 l: klflll\n" +
-    "17-18 g: gggzgggggggggggggg\n" +
-    "1-3 m: kmmmmmm\n" +
-    "5-10 s: qxstrsbxkssksc\n" +
-    "16-18 r: rrrrrrrrjrrjrrrrrvrr\n" +
-    "6-9 c: rgcscfjccvzgcccqc\n" +
-    "2-5 m: mmvmp\n" +
-    "1-11 z: zbsdnzstzsbzzlj\n" +
-    "6-7 v: vvvvtvqvpv\n" +
-    "11-12 x: xxxxxxqxxxfnx\n" +
-    "4-15 h: hnthvnjhzhqhwvwhh\n" +
-    "4-12 g: dggggrvvgmcldfgqbggj\n" +
-    "11-12 l: lllllwllllvn\n" +
-    "1-3 l: lpplz\n" +
-    "5-6 v: vzndfwd\n" +
-    "6-8 j: vxjjddjjjmjpjw\n" +
-    "6-7 k: kkkkklkk\n" +
-    "2-9 g: zgqmwlgfrsz\n" +
-    "1-2 k: kkqk\n" +
-    "2-13 h: clhmnhhwhpdhh\n" +
-    "3-14 z: zzxzzzzzzzzzzg\n" +
-    "9-10 v: vvvvvvvvpf\n" +
-    "17-18 z: zzzzzzzzzzzzzzczgz\n" +
-    "15-18 j: jjjjjjjjdjjjjjjjjx\n" +
-    "2-7 w: zqfxwwwwww\n" +
-    "4-11 r: qrcrrzrqnrhrn\n" +
-    "9-10 q: jqctxwmccqqpcqqbllq\n" +
-    "4-5 b: tbbbk\n" +
-    "1-2 r: rsvmjrbprjjvdkcfk\n" +
-    "9-11 v: vvvvvvvvvvv\n" +
-    "1-4 c: ccbjccccc\n" +
-    "7-8 l: llllllql\n" +
-    "5-8 c: cncccccwc\n" +
-    "3-4 d: kdzdkjdqkvhdz\n" +
-    "6-7 j: cjjjpqj\n" +
-    "11-16 t: ttttttttbttttttttt\n" +
-    "5-17 v: vvgvqvxvsvvvbvvvvvvv\n" +
-    "12-18 k: kkkgkkkkkskkkkkdkwk\n" +
-    "1-7 p: ppqqpjp\n" +
-    "1-13 v: fsvbwvvvmvtvv\n" +
-    "8-10 q: qqmqqqqbqmvvq\n" +
-    "14-16 m: mmmmmmmmmmmmmmmgm\n" +
-    "2-5 r: prrrmr\n" +
-    "6-12 j: jhjjjzjpjmjjvj\n" +
-    "5-6 x: xxxxdx\n" +
-    "4-5 n: nnnsnn\n" +
-    "2-6 j: jjjjztj\n" +
-    "3-8 j: tzjzbjbqqjlww\n" +
-    "13-15 z: btzzwrzbzmdcdzz\n" +
-    "1-2 j: ddjkbx\n" +
-    "4-8 b: jbbkbqsblcbhprzqtb\n" +
-    "3-5 b: bbkbb\n" +
-    "6-8 f: fffffffff\n" +
-    "2-4 l: lsprl\n" +
-    "17-18 t: ttttttttttttttttth\n" +
-    "1-4 p: pppf\n" +
-    "13-18 m: mmmmmmmmmmhmsmmmmmmm\n" +
-    "7-8 s: sssssssss\n" +
-    "18-19 t: ttjtttttttttttttttjt\n" +
-    "2-5 j: jjddt\n" +
-    "6-12 r: trrnrcrnrrrr\n" +
-    "6-7 h: rhhkhhthdsh\n" +
-    "6-7 s: vpxmpdstfdv\n" +
-    "9-10 p: ppppppppwpppp\n" +
-    "2-4 h: hhhh\n" +
-    "1-3 h: hhthhhhfhhhhh\n" +
-    "4-5 k: dkbknt\n" +
-    "7-10 d: kbdddddddsdd\n" +
-    "11-16 s: ssswksjsssgsssssspt\n" +
-    "5-8 b: vxlbbbzmbkktwrtlbt\n" +
-    "2-8 h: hhmhvszx\n" +
-    "6-8 g: ggzggggxgg\n" +
-    "3-4 q: qqqp\n" +
-    "4-9 v: vvfvqzbvvh\n" +
-    "10-13 g: xggmgglfgxpsgggggg\n" +
-    "1-8 b: bgsblbskxgkt\n" +
-    "7-10 b: dbbqhftgblbbb\n" +
-    "1-2 j: wjjgrdznbn\n" +
-    "12-13 z: mzzjzzzzzzzgzzsz\n" +
-    "4-9 m: psmmmmmbzmvmmm\n" +
-    "8-9 n: nnnmnnnnpnnn\n" +
-    "2-3 p: qpjhhgkp\n" +
-    "6-7 h: phhhwhhmfh\n" +
-    "2-4 b: bkrljb\n" +
-    "11-12 c: crccbcccccccc\n" +
-    "3-14 r: rrrrbrrhrrrrrzhr\n" +
-    "5-6 c: ccrcdcwcc\n" +
-    "1-17 k: kkkkkkkkkkkkkkkklkkk\n" +
-    "4-7 k: kkkkkkvkk\n" +
-    "3-4 w: rqwc\n" +
-    "6-12 k: kkxkklkkkkkk\n" +
-    "2-3 w: dpww\n" +
-    "15-16 h: hhhhhhhhhhshhhwhh\n" +
-    "2-6 x: gxxmthnbj\n" +
-    "3-5 s: sbhsc\n" +
-    "10-12 q: qfqqprqqrmqqq\n" +
-    "9-11 f: hkpmjfgfrcfnfz\n" +
-    "2-16 f: ffffffffffffnffq\n" +
-    "4-5 f: fffcf\n" +
-    "2-7 d: tdzqcdd\n" +
-    "1-4 h: hnxz\n" +
-    "16-17 g: gggggggtgggggggqx\n" +
-    "2-4 n: nngcd\n" +
-    "4-6 r: rrrkmf\n" +
-    "5-6 g: ggghgggg\n" +
-    "7-9 p: qkmpfzpptdjsbppcthpp\n" +
-    "9-13 t: ttttttbtttttt\n" +
-    "5-7 l: cldkllzgxldwlcdll\n" +
-    "5-8 f: ffpqrftfsjd\n" +
-    "6-13 t: tbtltkltttsjttkr\n" +
-    "6-17 w: wtbwwpwwwhwcwtwzzww\n" +
-    "2-8 x: nxsqbdmkqtx\n" +
-    "2-5 s: fsrsvss\n" +
-    "9-12 x: nxxxxxxxmxxxnx\n" +
-    "1-16 j: jjlmjrgpnkgjjwhjhxt\n" +
-    "6-10 k: kkxkkkkkpfkkl\n" +
-    "3-9 l: lhzgllglllrtt\n" +
-    "18-19 p: pppppsppppppppppppp\n" +
-    "1-8 b: bbbbdbbwbbjkbbj\n" +
-    "16-18 p: pppppppppspppptppgpt\n" +
-    "1-5 w: wnmwff\n" +
-    "3-4 v: vvvvm\n" +
-    "1-16 j: jbhjjbjhwjjgjxjw\n" +
-    "8-17 j: jjjjhjjjjjjjcjjjs\n" +
-    "3-4 n: nnnn\n" +
-    "17-18 t: tttttttttttttxttwtt\n" +
-    "3-4 k: kbpkk\n" +
-    "2-3 n: ndnn\n" +
-    "9-13 m: mmmmmmzmwmmmm\n" +
-    "1-10 d: djdddddldddddddd\n" +
-    "9-13 v: vjvvvvvvfvjvv\n" +
-    "13-14 m: mmmmmmmmmmmmmm\n" +
-    "4-10 x: xnxczxxxxxx\n" +
-    "17-18 h: hhhhhhhhhhhthhhhmhh\n" +
-    "3-13 z: zzmzzzzzzzzzzz\n" +
-    "3-6 w: wwtwwww\n" +
-    "11-14 v: ghvvvvvvvvvlvkvvvsvd\n" +
-    "2-9 r: qrdqvchhjgrpgj\n" +
-    "9-10 w: wwwwrwwwww\n" +
-    "3-5 c: xcgccc\n" +
-    "6-7 z: zzzzzfz\n" +
-    "16-18 b: bbbbbdbbbbbbbbbpbp\n" +
-    "3-5 s: ssssw\n" +
-    "3-4 z: zztzzzzzzz\n" +
-    "7-8 j: jjjjjjpj\n" +
-    "11-12 b: mbsjljhbbnpczlnbm\n" +
-    "1-4 k: tkhk\n" +
-    "9-10 j: jjjnjjjjjz\n" +
-    "3-8 v: nvrbvvmrvhcs\n" +
-    "1-5 z: szdcdjphttvnrd\n" +
-    "2-7 m: zmmmmmhvqhpmmmmsmmv\n" +
-    "7-8 t: tbtttttghcdptljtk\n" +
-    "2-9 s: slssssssss\n" +
-    "2-4 g: jgnn\n" +
-    "3-8 s: ssksssss\n" +
-    "6-10 t: bthxljrxhth\n" +
-    "4-10 d: dddddddddqddddddddd\n" +
-    "8-13 c: ccrjcccccqjcc\n" +
-    "6-8 z: tlgdknkzxrghz\n" +
-    "8-11 t: jttttmtbttdt\n" +
-    "1-2 x: xhxx\n" +
-    "3-4 c: cccj\n" +
-    "9-10 v: vvsvvvvvvv\n" +
-    "4-8 q: qqclqqqqtqqpzqj\n" +
-    "7-9 w: wwwwrwnwj\n" +
-    "1-3 w: cbwmzwwr\n" +
-    "6-7 l: llllllz\n" +
-    "1-8 h: rhzhhphhmhfnh\n" +
-    "1-5 t: ktrtv\n" +
-    "6-11 c: kfccccdcccvxwc\n" +
-    "4-7 q: qrqqzcx\n" +
-    "4-7 z: wcxzjrlhfbnczdj\n" +
-    "7-14 k: mckkdnkrkpkknkdkckfz\n" +
-    "1-6 v: vvvvvbv\n" +
-    "2-6 p: gmpszppxppp\n" +
-    "3-16 k: ggxkknwkkjkqskzktgk\n" +
-    "15-17 z: zzxqmnclzxzfvznzb\n" +
-    "3-6 x: xxxxxpxxx\n" +
-    "17-19 q: stvktzjwzbrbfmbqjsq\n" +
-    "4-6 b: bbbsbbb\n" +
-    "9-10 p: spttdpplsppdprxrvpgm\n" +
-    "4-5 w: wwwwn\n" +
-    "10-16 r: grnjxrwrrrzdrpmjtrrr\n" +
-    "14-15 q: qqkqqqqgqqtqqqrqhq\n" +
-    "4-8 q: qqqqzkzsqq\n" +
-    "10-16 m: mmmmmmmmmwnmmmmmmmmm\n" +
-    "5-10 h: hhhhzhhhhhhh\n" +
-    "5-11 p: mkpphppzhwqpgpsqcshz\n" +
-    "2-4 l: nnllsl\n" +
-    "2-8 q: bqjtjmfqsqgcjvgf\n" +
-    "2-3 w: wwsw\n" +
-    "12-16 s: lmsjpgzfldmrhrmf\n" +
-    "4-6 n: gnnnnv\n" +
-    "9-12 s: xmwssfsssssnssxwds\n" +
-    "2-4 h: vzfh\n" +
-    "1-2 n: ngdp\n" +
-    "4-7 q: sqqnhqqsvqqq\n" +
-    "5-6 k: zvkdkldkg\n" +
-    "11-12 w: wwwwwwxwwwkw\n" +
-    "7-11 p: hgbsfjpmbkz\n" +
-    "1-4 v: rwqvv\n" +
-    "4-6 s: pssssss\n" +
-    "7-10 m: mlmmmmmmmrmmx\n" +
-    "1-2 n: hnmqzsn\n" +
-    "11-12 n: nnnrnnnnnnnbn\n" +
-    "1-2 k: qbxhwswsxzkdsxcbtwrw\n" +
-    "13-15 n: nnnsnnnnnnnntnc\n" +
-    "17-20 n: nnnnnxtnnnnnvnndjnnn\n" +
-    "2-17 n: npnnnnnnnnnnnnnnnnn\n" +
-    "6-13 t: ttkrxzdkttltszskt\n" +
-    "10-15 k: mkfllgkdnvjptdh\n" +
-    "6-9 m: mmmmmjmmm\n" +
-    "14-15 w: wwxwwnwwwwzwwkgqkwww\n" +
-    "2-10 k: zmgrvrzlmkgcddcrxk\n" +
-    "12-14 c: cccczccccccjcjcccc\n" +
-    "11-15 m: mmmmdmmmmmmmmmqm\n" +
-    "18-19 r: rrrrrrrrrbrrrrrrrxbr\n" +
-    "6-10 b: hnbnbblvpd\n" +
-    "10-12 x: pwpxxqnxxxxxxvzcxx\n" +
-    "3-4 n: nnnpj\n" +
-    "4-6 n: nnnwnnjn\n" +
-    "3-4 k: kkmk\n" +
-    "12-14 j: jmjjjjjcjjjlwjjdj\n" +
-    "3-4 q: gqqxq\n" +
-    "7-10 z: zzcztxzzzzzx\n" +
-    "2-14 q: cqnqbvqsglczhb\n" +
-    "3-6 r: mrrhrn\n" +
-    "14-15 z: gzdzdszdkrfzzgpp\n" +
-    "4-10 j: jjjjjjjjjbj\n" +
-    "3-7 w: vrwwwwhwwkw\n" +
-    "6-8 s: shswpbjss\n" +
-    "2-4 h: ghvnhh\n" +
-    "3-8 m: mmmmxmmvm\n" +
-    "5-6 g: ggxgxg\n" +
-    "1-2 v: vzvv\n" +
-    "2-7 r: qgmgrxrgrgv\n" +
-    "5-15 z: zzzzbzzzzzzzzzz\n" +
-    "3-10 t: tttttdtttwtl\n" +
-    "1-4 w: kwws\n" +
-    "1-3 h: crxhhkhc\n" +
-    "5-6 f: nfffnttvfcm\n" +
-    "9-15 d: ddddpdqddmdjddz\n" +
-    "7-8 c: mjfqkmclzphkcnjrg\n" +
-    "4-7 l: lcblmnlpltgbnsjll\n" +
-    "5-8 v: rvcvvvvbvv\n" +
-    "3-4 b: kbblb\n" +
-    "12-17 v: vvzvvvdrvvvvvctspvnz\n" +
-    "4-9 d: dddsdddddddddsd\n" +
-    "6-7 s: shvgwsspmsnr\n" +
-    "5-10 k: dghtgjbkkk\n" +
-    "1-5 m: mmmcsxm\n" +
-    "1-3 q: bvqqk\n" +
-    "7-9 c: wccsccxcfkvvkctzc\n" +
-    "5-6 k: jdkkcqkkg\n" +
-    "5-8 g: tgggqpzfgfg\n" +
-    "19-20 t: ttttttttttttttttttth\n" +
-    "1-9 n: dhmnnqnnnpnnr\n" +
-    "4-7 w: fwmwwrz\n" +
-    "1-3 p: qcnppb\n" +
-    "1-14 f: jtrcqftxkxfmxffffhf\n" +
-    "10-11 z: zzpzzzzzzkzzz\n" +
-    "13-15 h: phhhfhhhhlhhbhhhh\n" +
-    "10-12 t: tttttttttmtt\n" +
-    "6-9 s: psssxsscssss\n" +
-    "3-4 p: ppbgp\n" +
-    "11-15 b: lpjbbbpbbbrhbbbb\n" +
-    "9-10 c: cchccccccl\n" +
-    "3-9 t: wtltcrnvtmgtf\n" +
-    "10-13 g: rkgggkfvcgktrhx\n" +
-    "16-18 k: kkkkkkkzkkkkkkkfkk\n" +
-    "3-8 q: txxqqjbqqd\n" +
-    "7-16 j: gjgxwjjwjwvhjkqvr\n" +
-    "4-12 t: xttzrmdtjvttcn\n" +
-    "3-5 c: lcvcczsjd\n" +
-    "14-16 n: nnnnnnnrmnnnnnnpn\n" +
-    "4-9 c: cccfrpclcc\n" +
-    "13-14 l: klllllllllllll\n" +
-    "2-5 l: rlxvflqllllvsm\n" +
-    "9-10 h: rhbhhhhhrhh\n" +
-    "3-4 p: pftpp\n" +
-    "1-3 z: zwbjlzpwldx\n" +
-    "12-16 s: sbqwfmsstlsqbsws\n" +
-    "8-9 g: gtqggjqgn\n" +
-    "4-14 w: twwtwwwwgvwwwwswpwr\n" +
-    "14-15 x: xxxxxqxxvxxxpxhxxx\n" +
-    "11-12 c: ccdccccxccclmcccc\n" +
-    "8-10 w: wwwwwwwrwwwwwww\n" +
-    "1-4 f: fffqfpffff\n" +
-    "3-4 p: pppq\n" +
-    "3-8 l: dglblkmlllklxqsl\n" +
-    "2-4 k: wkskqwkccrtv\n" +
-    "10-11 l: lllllllllsl\n" +
-    "6-11 b: qkgjbcqqhbqxw\n" +
-    "1-3 q: qvqpp\n" +
-    "10-14 d: xzhdlcwkqqzzbdtf\n" +
-    "14-15 f: ffffffffffffftq\n" +
-    "7-8 q: qqqqfqqdrqqh\n" +
-    "4-9 h: ljfhrhhmbr\n" +
-    "11-13 r: rrrrwrrrrkrhh\n" +
-    "7-10 z: zzzzzznkzb\n" +
-    "3-5 n: kvtnn\n" +
-    "1-3 g: ggng\n" +
-    "5-8 g: gggggggg\n" +
-    "2-9 c: csnczjctbcmcccc\n" +
-    "11-12 n: jnnnnxfknnndnnfnr\n" +
-    "1-5 d: vdmddddd\n" +
-    "7-8 z: zzzrztzmz\n" +
-    "6-8 z: zbzzsmzzjm\n" +
-    "1-2 r: trrrcn\n" +
-    "5-7 m: msmmxcm\n" +
-    "12-13 h: hnvhztwhhpwhqkf\n" +
-    "10-11 t: wprthmcttqtt\n" +
-    "4-6 r: tttrssfrrbxjrzgr\n" +
-    "3-5 r: zrsnr\n" +
-    "8-12 z: zjqzzzxdzzzb\n" +
-    "16-17 x: gxxtswfpzxxpxbvxq\n" +
-    "4-5 h: hhhhg\n" +
-    "19-20 f: ffffffffffffffffffrf\n" +
-    "3-4 l: llbsq\n" +
-    "7-15 k: knkkkkfkkkkskkklkkkk\n" +
-    "3-6 q: qqpqqb\n" +
-    "7-9 t: ctztttttpjvt\n" +
-    "1-2 x: xmpx\n" +
-    "10-12 c: cctccdcchzcppctq\n" +
-    "6-7 s: lssnssxns\n" +
-    "4-13 m: wmngjsmtmmcjmdmm\n" +
-    "2-9 h: jhmdxgchltdgj\n" +
-    "12-13 c: hcjcrrlsgcccn\n" +
-    "7-10 t: tsbtzttzqj\n" +
-    "18-19 c: sccccccccccccccccczc\n" +
-    "3-4 g: ggghw\n" +
-    "7-12 p: vdlpjjpvmrmpskp\n" +
-    "8-10 v: hqwvvtvvtvvvvjv\n" +
-    "2-4 k: nkgv\n" +
-    "1-3 h: hhxmhn\n" +
-    "11-13 d: ddddddddddcddd\n" +
-    "7-19 g: ggggmgggggggggggbsmm\n" +
-    "5-13 k: kbkkkkmkwblkdf\n" +
-    "1-2 j: jjjzjjjjwjjjj\n" +
-    "6-10 g: gfsggjgggnl\n" +
-    "2-3 s: cskcs\n" +
-    "3-11 m: mjvqhbhjgqmq\n" +
-    "1-11 q: qdwqqqbqjmzmdhxl\n" +
-    "2-12 k: kkkkkkjwkkkckkzr\n" +
-    "9-12 v: vvvvvvvvsvvv\n" +
-    "3-4 r: rjmxr\n" +
-    "2-7 k: kkpvkkr\n" +
-    "3-4 h: hnzhhhsvfbswzxkslt\n" +
-    "3-4 n: qbnmhhnhdchbnnvk\n" +
-    "1-8 v: vvvvvvvv\n" +
-    "3-4 j: jjmjj\n" +
-    "9-18 f: ffffffffzffffffffff\n" +
-    "4-6 f: qgfjffbfj\n" +
-    "1-3 m: mmmmmtmmzm\n" +
-    "2-5 d: qdddf\n" +
-    "4-5 w: wwswbkwjcw\n" +
-    "5-9 g: jvhgwlllgvxrfg\n" +
-    "1-2 p: fhvmh\n" +
-    "15-20 m: mmkmmmmmcmmmmmmnncmc\n" +
-    "13-16 l: llncvllllllllllglz\n" +
-    "16-17 l: llblllllkllllllndlgl\n" +
-    "5-8 s: ssstwvsts\n" +
-    "1-2 d: rddddldxdsrtddd\n" +
-    "6-7 d: dddkdpdddd\n" +
-    "4-5 w: wcwgw\n" +
-    "9-11 r: lrfsrhrxqrrnrjggr\n" +
-    "1-9 w: pxpfwbmxwdgvbhzlt\n" +
-    "11-14 q: lhnlmdssgvqqskr\n" +
-    "8-13 x: vtcxxmxswxmxd\n" +
-    "5-13 r: sbpdrpgbvdrrrx\n" +
-    "1-5 m: bmmmm\n" +
-    "1-2 m: fmmsrft\n" +
-    "2-6 v: pvvrvb\n" +
-    "6-7 s: sssssksf\n" +
-    "3-4 c: zclc\n" +
-    "11-17 q: qqqqqqtqgqqqqqqqmq\n" +
-    "1-6 j: jjgcrlm\n" +
-    "3-4 n: sfnn\n" +
-    "12-13 p: bppppppppppmkp\n" +
-    "6-7 q: dtgqtqqlqqqqsq\n" +
-    "5-6 v: vvvvqvv\n" +
-    "7-8 d: ddwddbjdd\n" +
-    "11-16 m: mmmmmtmmmmmmmmmfm\n" +
-    "18-19 v: vvvvvvvfvvvvvvvvvvr\n" +
-    "1-2 j: jljjj\n" +
-    "3-9 r: rrrzrnrsdrrr\n" +
-    "7-10 w: twslbwxwbwwwwww\n" +
-    "9-11 v: rpvvzvxvvvzvvv\n" +
-    "3-5 d: zzvtdt\n" +
-    "7-11 p: prldqxjtpnppx\n" +
-    "1-10 z: lzzzbcfgzz\n" +
-    "11-14 h: hhhhhshhhhhhmph\n" +
-    "6-12 v: sfbvvwvvjvkvvvd\n" +
-    "8-10 f: fffhfffffnc\n" +
-    "7-8 g: gqjgfwfggghggh\n" +
-    "8-9 x: zgxxxxmhxxxx\n" +
-    "12-13 z: zzzzzmnbzzzzgzzzr\n" +
-    "2-3 c: cvcsccfg\n" +
-    "3-4 s: ssws\n" +
-    "5-8 c: cccwcccp\n" +
-    "4-6 c: ccccdlxcc\n" +
-    "5-8 l: prlzlxcccl\n" +
-    "1-4 g: qlng\n" +
-    "8-12 c: ccccccckcccccccccc\n" +
-    "2-8 d: ddpddqjhbbr\n" +
-    "13-15 j: jjjjjjvjjjwjjjqjj\n" +
-    "5-8 x: xxwxcxcnxxxxfx\n" +
-    "4-6 t: dtfbctcgtzrtntw\n" +
-    "5-12 r: rrkdrrrdrrrx\n" +
-    "6-7 h: rhbghkhchjmbkhhm\n" +
-    "7-9 z: zzdzzgzpz\n" +
-    "4-5 v: lvnmq\n" +
-    "1-6 w: wwwwwwjw\n" +
-    "14-16 n: hpnnnnnnvnxnnnnlnn\n" +
-    "18-20 r: ftrrzrsrrrgsrzhwrbrr\n" +
-    "12-13 s: ssfbssssssssws\n" +
-    "2-9 g: gfvcgzgjb\n" +
-    "2-4 n: nntqtn\n" +
-    "4-5 h: vqzhzhrxhh\n" +
-    "4-5 g: ggqkg\n" +
-    "1-2 x: xzkx\n" +
-    "7-11 j: jjdjjmddlrjgjjjqzls\n" +
-    "1-3 v: vvvctbv\n" +
-    "4-7 s: fwmsssdss\n" +
-    "10-11 p: pppppppppbppp\n" +
-    "13-14 q: qqqqqqcqqnzqzqqqqqt\n" +
-    "7-14 z: rhzzwqmzzzzxzzzzcgz\n" +
-    "8-9 b: bgbsbbbbwbsbblbcr\n" +
-    "7-8 h: hhhhhhghkh\n" +
-    "1-2 g: ngct\n" +
-    "13-15 f: fffffffffffvmfg\n" +
-    "4-7 h: mdghhfs\n" +
-    "12-14 z: xzjzzzzvzzzgzz\n" +
-    "3-4 p: ppsp\n" +
-    "18-19 q: wqkqxtkfhlmrxndwsqcc\n" +
-    "5-14 p: ppppbppprnprwpwpp\n" +
-    "3-4 j: jjjcjj\n" +
-    "2-3 b: blbn\n" +
-    "4-6 g: grggvcgg\n" +
-    "2-4 h: hghhh\n" +
-    "4-6 f: fffffm\n" +
-    "2-4 n: qsdnxt\n" +
-    "2-5 q: qqqqqq\n" +
-    "9-12 w: whlqgwcrqxwwrvw\n" +
-    "6-7 z: zzzzztqzz\n" +
-    "7-10 l: slnzmdlslsrc\n" +
-    "4-8 q: jqqqjqqltd\n" +
-    "5-6 h: xjzbdbsfjfrxhxqlbbrt\n" +
-    "6-12 w: wwwlbvwwwwwwww\n" +
-    "2-5 c: zcpcf\n" +
-    "4-5 h: hhhmh\n" +
-    "16-17 h: hhhhhjhhhhhhhhhgh\n" +
-    "12-13 f: fffffffffffmk\n" +
-    "4-5 d: dddgd\n" +
-    "4-10 p: xppvfpsgpphcpppml\n" +
-    "3-5 w: wwtwwj\n" +
-    "7-10 w: twwwwgtwjwjwww\n" +
-    "5-10 z: zzzzzzzzzgzzz\n" +
-    "13-14 t: sjxsttgttttbqtthtbd\n" +
-    "6-8 c: ccccmdrcct\n" +
-    "2-4 v: vcxm\n" +
-    "3-7 k: dkkzfwzkn\n" +
-    "4-7 v: cjrvvxtsvvvv\n" +
-    "11-15 s: ssssssssssrssss\n" +
-    "1-8 j: jskfjjjj\n" +
-    "2-3 p: pgnpn\n" +
-    "4-5 p: psplppc\n" +
-    "1-3 n: nnnn\n" +
-    "11-12 x: xxxxmxxxxxzxxdrqx\n" +
-    "1-4 k: kpln\n" +
-    "6-10 p: pphppppppkp\n" +
-    "2-4 v: cgxvvxkzvs\n" +
-    "6-7 m: mmmvbmmjsrmtzkddzmxm\n" +
-    "5-9 s: xcshstsdslsxms\n" +
-    "1-17 m: vmjmmmmmgmmmmmbmst\n" +
-    "2-3 g: ghgg\n" +
-    "5-6 k: kkkkmkh\n" +
-    "5-6 c: lccfcccsgc\n" +
-    "4-6 n: nncnbnmznngnj\n" +
-    "8-11 j: ljffjmrjmjm\n" +
-    "4-9 j: rqxjwfsrfzbxjjmnflj\n" +
-    "3-6 s: zscszpss\n" +
-    "3-4 d: qldtdht\n" +
-    "15-17 x: xmxxxxxxxxxxxxdxx\n" +
-    "1-4 m: mmmmmmm\n" +
-    "2-9 v: vvvvnvzsvv\n" +
-    "3-4 n: nndn\n" +
-    "9-13 s: crxnbslshlbgsh\n" +
-    "1-10 c: cczkccchfc\n" +
-    "3-5 d: dddddwv\n" +
-    "7-9 n: hqrhnxnzfnkqnvnnnng\n" +
-    "3-4 c: cwcvfdc\n" +
-    "6-8 l: llllllltl\n" +
-    "4-6 q: qqqqqm\n" +
-    "1-5 x: xhmxxxtwxdxkk\n" +
-    "5-17 f: gffrffffmffcbmfffff\n" +
-    "15-16 x: xxxxxxxxxxxxxxcl\n" +
-    "3-7 z: nmjzzdzz\n" +
-    "9-12 v: vzvxvxvwpvvvvvcvxpmv\n" +
-    "4-6 w: wtwwwm\n" +
-    "3-12 d: dddddzdddgdw\n" +
-    "2-4 p: pqpk\n" +
-    "2-4 g: pqqgbwqzsjtcrmg\n" +
-    "3-5 d: xdhsdpndjhd\n" +
-    "9-11 t: ttbtttttqtt\n" +
-    "2-11 d: kddwtcwxgkclxcnfgm\n" +
-    "1-4 v: hgvvfvjvz\n" +
-    "4-5 s: ssssm\n" +
-    "2-11 g: gmggvgggggn\n" +
-    "3-6 c: ccrccvr\n" +
-    "1-4 n: nznfnn\n" +
-    "1-4 f: sfxffff\n" +
-    "17-18 q: qqqqqqqqqqqqqqqxhq\n" +
-    "2-5 l: zllhn\n" +
-    "7-10 v: cvcvvvvvvqxbv\n" +
-    "9-13 l: lllgllllllllql\n" +
-    "3-11 g: mlgwrbcsdflzm\n" +
-    "4-5 t: gtbtcfqrxfxtjptgpqr\n" +
-    "5-8 d: gfdzjkvd\n" +
-    "4-5 f: ftfff\n" +
-    "15-17 p: pppppppppppkjpppft\n" +
-    "1-3 d: tcdd\n" +
-    "3-12 n: tnxnnbshnndnnhbn\n" +
-    "5-8 q: pqlkptqqqcqbqrr\n" +
-    "8-9 l: lllllkllb\n" +
-    "10-13 j: rsfjlxjtfjrkxn\n" +
-    "8-9 w: wmzvwwwwdwzwwt\n" +
-    "12-14 w: wwwwwwwwwwwwwm\n" +
-    "6-7 g: qwggfqgnvrggg\n" +
-    "15-16 x: xxmxxqrlgnfxxsxr\n" +
-    "4-8 n: gnnlnnlncnrnnqnwncd\n" +
-    "8-11 k: kkkkpknzdkkck\n" +
-    "4-5 m: mmmsm\n" +
-    "3-4 n: nnxn\n" +
-    "7-11 c: cckcdzcjldcwfcr\n" +
-    "12-14 j: wxvjvpjjjpjkjj\n" +
-    "1-13 h: fhhcfzhhhhhhhh\n" +
-    "11-12 p: pppppwfpppspp\n" +
-    "3-4 t: tktptt\n" +
-    "1-6 n: nnnnnfnn\n" +
-    "6-15 l: lllllmwlllllllll\n" +
-    "5-6 q: qqqqqdqlqqq\n" +
-    "4-8 j: bjjxhjjd\n" +
-    "2-9 w: tdwpwdkcw\n" +
-    "6-8 l: llllltbr\n" +
-    "13-14 f: fffffffffffffj\n" +
-    "4-11 z: wxzkzzzzzzzt\n" +
-    "7-11 w: wwkvcfwfsrcw\n" +
-    "4-9 b: bzbjgbbbb\n" +
-    "17-18 k: kkkkkbmkdkmckkvbkk\n" +
-    "5-6 j: ngffrjspcz\n" +
-    "16-18 q: qqvqqqqqqqqqqqqhqqqb\n" +
-    "12-15 s: sszszstsgsssssdssssq\n" +
-    "5-6 d: dddddg\n" +
-    "4-8 s: ssssvnss\n" +
-    "16-19 g: lgzswgbfwghgggnglqg\n" +
-    "8-9 t: tttttttltttt\n" +
-    "14-20 b: bvbbjjbbbwttbbblbbbp\n" +
-    "4-7 c: cxcdhmm\n" +
-    "1-11 g: gkvjfgjlggpjb\n" +
-    "1-2 w: whmwwcwqgw\n" +
-    "6-16 p: lgwrlppdfpxbltmqlp\n" +
-    "4-7 r: rwrrhhrqgrr\n" +
-    "12-15 j: jjjjjjjjjtjnjjh\n" +
-    "3-5 k: kkkkkkkk\n" +
-    "7-9 p: wpxpphfpp\n" +
-    "2-3 z: zfzz\n" +
-    "2-3 k: nbsdwkqktssd\n" +
-    "7-12 g: gggggpnpdssgwggx\n" +
-    "6-8 r: frrrrjrr\n" +
-    "1-7 l: llllllll\n" +
-    "11-16 x: bxxsqxxxxxxktxxz\n" +
-    "3-5 n: nwbknpnnvnr\n" +
-    "8-9 t: qtttfvttqnttttmtttdv\n" +
-    "3-4 d: dfgk\n" +
-    "5-7 f: ffwffff\n" +
-    "9-10 c: cccccccpgr\n" +
-    "3-4 q: qqpq\n" +
-    "1-2 k: kmwvdkzwxlkk\n" +
-    "1-8 s: sssljrsmsx\n" +
-    "12-13 r: rsrrrbrnrhrrhrprrrrn\n" +
-    "4-16 w: kfqncxdmjlwkfjmwhw\n" +
-    "9-13 l: llllllllpllllll\n" +
-    "2-4 m: mlmmdbbqqmgkcffxw\n" +
-    "2-12 j: jjjjpjjjjjjrj\n" +
-    "9-11 x: qxxdxxxxxxqx\n" +
-    "2-6 v: svcsfvrfpbxpmvtscqjg\n" +
-    "2-12 c: dctwqfthcdbcsklb\n" +
-    "1-2 c: zcfrlczcpxcm\n" +
-    "2-8 s: nspkfsvbfsw\n" +
-    "5-10 m: dxvwmqmngmzd\n" +
-    "2-3 w: twsxwvwzw\n" +
-    "5-10 c: cccccccpcxrc\n" +
-    "8-16 j: jjjjjjjmjjjjjjjjjj\n" +
-    "8-16 p: ppppsppdpphppdxp\n" +
-    "16-18 t: tttttttttttttttttcs\n" +
-    "11-13 j: jjjjhjjjjbjgjjj\n" +
-    "14-15 d: ddddddddddddddwdd\n" +
-    "1-15 s: psgssjszssbssdsgds\n" +
-    "14-16 z: zzzzzzzzzzzzzrzqz\n" +
-    "8-10 v: vvvpvvvvvg\n" +
-    "4-5 z: zzkzf\n" +
-    "3-9 g: ggggggggfg\n" +
-    "1-4 n: ckwcnhz\n" +
-    "7-9 w: ckwwwwjwq\n" +
-    "5-12 q: qbqwcqbvvxbq\n" +
-    "4-10 x: xvxxxghnrk\n" +
-    "2-3 d: pdpmdkvsmccpnp\n" +
-    "3-11 f: lffffjfmzqplsfzfl\n" +
-    "9-10 h: hhhhhhhhhk\n" +
-    "1-4 x: bxxxxxmxx\n" +
-    "10-13 t: rnnglkrgbrrwtqjmlbn\n" +
-    "5-17 v: zfmxkbtjpvvvqdxcvvnv\n" +
-    "9-10 j: kjkzjlnjjjjjjjj\n" +
-    "13-15 g: gggggggggggwxsg\n" +
-    "2-7 l: llhrxjl\n" +
-    "5-6 s: hfszgwczxtsp\n" +
-    "1-10 v: dqqvhttqqv\n" +
-    "10-13 z: zctbpzzzzzpzdznzz\n" +
-    "6-10 p: mpplqpppfhhqptphp\n" +
-    "2-5 w: wwgbw\n" +
-    "1-4 b: sbbbbb\n" +
-    "6-15 z: hpzlzzzzzpzzzgdzzlzn\n" +
-    "2-4 r: rhfrdqrxsb\n" +
-    "6-16 s: crrtqsjqfssssgsssc\n" +
-    "17-18 h: hhhhhhhhhhhhhhhnrh\n" +
-    "6-8 f: xpgdffbblxxl\n" +
-    "2-4 h: wzfmhhl\n" +
-    "5-6 k: jkkkhk\n" +
-    "8-9 c: ccccccccc\n" +
-    "16-17 t: tttwttdtttttttvkttt\n" +
-    "9-10 f: fffffffffh\n" +
-    "6-10 l: zxclbtlsjlbls\n" +
-    "2-6 m: mmjmms\n" +
-    "8-11 r: rrrrrrxtrrrsqr\n" +
-    "1-11 v: gcvxfvdkvvs\n" +
-    "9-12 c: xgcjrmscgjmjfsdxcp\n" +
-    "10-11 g: gggggjggggdg\n" +
-    "5-7 s: ssssprssm\n" +
-    "2-3 c: nzccfjcdxc\n" +
-    "9-13 k: mdhkkgkkkkxkkvrkkk\n" +
-    "6-7 s: sssssbsssk\n" +
-    "12-19 n: xtlfpnxflxwblnjsnxnq\n" +
-    "3-4 t: tdtltttlp\n" +
-    "2-4 g: gggg\n" +
-    "11-12 k: kkkkkklkkmmk\n" +
-    "2-6 r: rsrrrrrl\n" +
-    "3-4 r: rrzq\n" +
-    "12-14 l: lllllplllklmlrd\n" +
-    "2-3 d: dkdd\n" +
-    "1-2 t: vttt\n" +
-    "7-14 l: lmdkltvllhsnllnl\n" +
-    "6-7 s: scssxssrsqfsjrcgdsb\n" +
-    "5-6 d: tndddgrv\n" +
-    "1-3 t: jhvtckvptnp\n" +
-    "14-15 g: ggggbggzqggggdvgg\n" +
-    "2-5 t: tvttt\n" +
-    "4-9 f: hfsmksgnfh\n" +
-    "6-14 k: kkkkkkkkkkkkkskk\n" +
-    "6-7 w: wwwwwwxwcc\n" +
-    "5-9 n: bnsvnnnqtpncn\n" +
-    "5-7 v: vvjvfvvv\n" +
-    "7-8 d: ddddddxd\n" +
-    "13-14 b: bbbbbbbbbbbblf\n" +
-    "1-4 l: lllml\n" +
-    "9-12 p: ppppgppgpppwpdp\n" +
-    "4-11 p: rpjpprbztgkxx\n" +
-    "4-7 g: ggggzgtg\n" +
-    "2-3 j: ncjjk\n" +
-    "14-15 v: vvvvvvvvvvvvvvfv\n" +
-    "9-10 l: llxllllhlzlsb\n" +
-    "13-14 p: ppnppppppppppz\n" +
-    "5-11 j: jjjvhjkjjjjzj\n" +
-    "14-20 b: dbbbbbbbbzbbbbbbbbgc\n" +
-    "5-6 m: mmdzzjmm\n" +
-    "3-4 t: ttft\n" +
-    "5-6 m: mmmmrmpmmmm\n" +
-    "15-17 v: qhjrfvvbvplvvvvvq\n" +
-    "1-15 t: gctmcdxttttvvtt\n" +
-    "4-5 v: pfvcvcvrvv\n" +
-    "13-14 n: nnnnnnnnnbnnknn\n" +
-    "7-9 h: hhhhhhhhh\n" +
-    "1-2 f: fhffgj\n" +
-    "1-12 b: bbbbbbbbdbbk\n" +
-    "6-7 n: nnnnnng\n" +
-    "13-18 f: fffffffffffffffffs\n" +
-    "11-14 b: bbbbbbbbbbbvbfb\n" +
-    "10-12 h: hhhhhhhhhwhq\n" +
-    "7-8 w: wwcwqcwwwpwbww\n" +
-    "1-5 m: fmmmjmm\n" +
-    "14-15 v: vvvhvvvvvvvvvvf\n" +
-    "12-17 b: bbvbbbsblwbbbbbxf\n" +
-    "1-5 w: stwwj\n" +
-    "6-10 j: jjjjjgjjjj\n" +
-    "1-4 l: zvcjqgqrvvfndlj\n" +
-    "5-7 s: tswsgws\n" +
-    "1-13 v: zfwvvvvpvvvvmvvvvvjv\n" +
-    "1-3 j: rjjvpkknmmjmxpqrmx\n" +
-    "5-8 s: mxgsrsssbstb\n" +
-    "5-14 q: qqqqqqmtjqqqqqqc\n" +
-    "1-7 s: sswdxsnbkj\n" +
-    "5-9 d: ldnbdmrtv\n" +
-    "7-8 w: wwwwwwww\n" +
-    "7-8 g: gxggggpg\n" +
-    "8-12 r: rrrrrrrrrrrkrr\n" +
-    "2-5 n: nnbnsmpml\n" +
-    "2-3 g: gsggggggg\n" +
-    "9-11 s: kssssssssxns\n" +
-    "15-16 m: bhsxvbrjhfzmmflm\n" +
-    "4-7 h: wmhhhhzh\n" +
-    "2-13 g: khdgzvpxgrcvgc\n" +
-    "5-13 n: wnnnnslnnnnnjt\n" +
-    "3-7 t: ttsptkgttt\n" +
-    "1-7 m: ffqtfmm\n" +
-    "8-12 p: pplppppspjpppq\n" +
-    "17-18 r: rrrprrrrgrrrrxrrrzrr\n" +
-    "3-4 f: ffzff\n" +
-    "10-11 x: xxxxxxxxxxw\n" +
-    "10-11 b: bbhbbbbwbbbbbd\n" +
-    "7-16 b: htbbxcbsbtjgxdvjcbc\n" +
-    "9-12 g: gggxggggsgvgqg\n" +
-    "13-15 l: dgllcqgtslfvkwlb\n" +
-    "10-11 f: fffvfffffffff\n" +
-    "2-6 d: ddqtnb\n" +
-    "3-11 m: mmmmsvqmmmcxkmm\n" +
-    "15-16 f: fffgffffffffkffqff\n" +
-    "3-4 s: hvgssssb\n" +
-    "4-5 s: jslss\n" +
-    "10-19 v: vvvvvvvvnvvvvvvvvvg\n" +
-    "1-3 c: cmcqkckzzsczn\n" +
-    "2-3 j: jjhm\n" +
-    "10-11 j: jjjjmvjjjxkjj\n" +
-    "2-3 r: rqrrtztrbpk\n" +
-    "6-7 d: dddddrd\n" +
-    "6-16 n: dzqnnsnmssnjznnnnnv\n" +
-    "7-11 f: ffqrffhfffftfffff\n" +
-    "2-8 z: zzzzkzddzzb\n" +
-    "2-7 j: nhjjjjjhjs\n" +
-    "7-10 l: xlltwhllrd\n" +
-    "10-12 w: nwrsqlwhqkcl\n" +
-    "15-16 w: wwwwwwwwwwwwwwwl\n" +
-    "11-12 h: hhhhhhhhphmh\n" +
-    "1-6 v: czvvwkgbvmjxvvgv\n" +
-    "3-14 p: pppppppppqpppxpppprp\n" +
-    "2-6 d: ddqrdnddddddddnddd\n" +
-    "8-18 j: gjghwxsjfpcfqmjxqjc\n" +
-    "5-11 g: ftggkgggbvsggb\n" +
-    "1-4 q: bqqqqqqqqqqz\n" +
-    "1-12 x: bgxxxxxmxxxx\n" +
-    "3-5 l: lllll\n" +
-    "3-7 c: zwccrrnfw\n" +
-    "3-4 q: sqdqsr\n" +
-    "3-4 g: gggv\n" +
-    "9-10 h: wnpkttckhh\n" +
-    "3-4 t: ttgp\n" +
-    "3-6 g: glcgtgg\n" +
-    "5-6 w: wwxxnwmpgkppwnwwj\n" +
-    "3-4 f: ffzf\n" +
-    "5-7 z: zdzzfvv\n" +
-    "4-6 p: ppmprgpmcdkcp\n" +
-    "11-12 m: mmmmmmmmmmcm\n" +
-    "2-7 z: zzzzwzz\n" +
-    "7-8 m: mmmmmmms\n" +
-    "4-15 z: zcsnzzfczzmczdzjdzz\n" +
-    "6-7 k: rkrlklk\n" +
-    "7-8 v: dtklkrqhv\n" +
-    "4-5 x: wprlxxhxbjsfx\n" +
-    "4-7 j: cvrjjbxxjfwjjjd\n" +
-    "1-2 g: ggsb\n" +
-    "5-7 k: kkrfgvkqxk\n" +
-    "3-5 q: qqpqq\n" +
-    "7-12 c: cccccxmncnvzbcc\n" +
-    "2-6 h: mhlhgl\n" +
-    "7-8 l: lllllzllbfl\n" +
-    "1-6 f: xnfssk\n" +
-    "12-13 d: dddddddddddgd\n" +
-    "3-7 p: ppkppppg\n" +
-    "8-11 j: mjfwjzfpjgjtnnqh\n" +
-    "9-10 c: qtjcccccjcfclscc\n" +
-    "10-12 b: bbbbbbpbbbbbcb\n" +
-    "1-3 p: rfppppc\n" +
-    "2-5 j: wjjbkbm\n" +
-    "14-15 k: zkkkkkkkkkkkkvk\n" +
-    "4-10 v: jkjslhtdvvtprslsr\n" +
-    "4-10 s: sklrpnszsswls\n" +
-    "8-11 k: dktkkkkkkkzkktq\n" +
-    "10-16 v: rndbqtdxwtkvhvgvhkg\n" +
-    "1-3 w: swwm\n" +
-    "7-8 z: zzpzbzjzz\n" +
-    "2-17 f: hfxrbqffmfdrzfzgsvmq\n" +
-    "1-4 c: cqclc\n" +
-    "5-10 x: xzxxxxxxkx\n" +
-    "1-3 x: xdspcrljk\n" +
-    "13-14 g: kwwbqcmwfwhrgzlg\n" +
-    "7-10 z: xpsxjczspcflhbjk\n" +
-    "6-12 m: sxgpgmbdmvksfpmqcjx\n" +
-    "9-11 c: ccncctcfcvpccxc\n" +
-    "9-11 t: ttxttttwttb\n" +
-    "2-13 x: xxdvxmxxxnxxzx\n" +
-    "17-18 n: nncnnnnnnnnnnnrnvn\n" +
-    "5-12 j: jpjzjpjjjsphjtj\n" +
-    "9-14 n: znnnnnnnnnnvsnnn\n" +
-    "3-4 v: vfdvxwlv\n" +
-    "2-18 w: mwfpnzwlvwmxgsprvhp\n" +
-    "11-13 b: bblbbbbbbbcbbrlc\n" +
-    "1-12 l: llllllrlhspdl\n" +
-    "4-6 p: pphhpp\n" +
-    "5-7 r: rffrwrrqzrzcv\n" +
-    "7-10 z: hfzzzzzzzz\n" +
-    "17-18 q: qqqqqqqqlqqqqqbqqqq\n" +
-    "9-14 s: ssstsjssbsgsss\n" +
-    "12-16 w: wwwwwwwwwwwwwwwgw\n" +
-    "1-4 h: bhhh\n" +
-    "1-2 g: ggggqggrn\n" +
-    "10-12 p: dzpzvvwppphfpl\n" +
-    "3-4 w: wnwp\n" +
-    "2-17 k: pdkknkhkskhndkvkkgwk\n" +
-    "10-13 w: wwwwwwwwzwwwnzw\n" +
-    "5-6 t: crrgctktdmtttldhdlmt\n" +
-    "9-11 h: hhhhhhhhthchhhhh\n" +
-    "2-4 k: jktxzmhhmxjmtkkbphpk\n" +
-    "6-9 g: ggggghggqg\n" +
-    "1-5 j: xjjcj\n" +
-    "1-5 p: xpwnp\n" +
-    "1-11 q: qqqqjqhqqjf\n" +
-    "8-16 p: pppppppnppkpppch\n" +
-    "1-3 k: kkkk\n" +
-    "4-11 s: sssbsslswss\n" +
-    "6-10 s: sfkssshksrsq\n" +
-    "2-4 v: mnvv\n" +
-    "5-6 l: llllllllllll\n" +
-    "3-5 n: nznnn\n" +
-    "4-5 l: nllzwml\n" +
-    "3-5 w: rwwqv\n" +
-    "4-6 x: xxbxvwxdxgbxgx\n" +
-    "10-16 w: wwwwswwwwwwwwwlwqw\n" +
-    "10-12 d: dddddddddddfd\n" +
-    "7-9 q: qwlqzqqsvqq\n" +
-    "5-7 p: fpzpkplppp\n" +
-    "4-11 n: xfnxfjhxvxnnzc\n" +
-    "3-4 x: qfxx\n" +
-    "18-19 g: gggqggdggggggggggmgg\n" +
-    "13-15 c: cccccccccccczcc\n" +
-    "11-12 v: qvvnvvvzcvhtvctvtb\n" +
-    "3-15 d: dpdgmdnfsdbgdddbdmcd\n" +
-    "9-13 j: jjjjcjjprjjjjj\n" +
-    "3-9 t: qtvttxtxtngnhdt\n" +
-    "12-13 d: ddddddddzdddcv\n" +
-    "4-8 h: hhhhhhhbhh\n" +
-    "2-3 x: xrxc\n" +
-    "2-10 l: lmlllllllll\n" +
-    "7-8 d: dddddddrdd\n" +
-    "11-13 c: ccccccccccccd\n" +
-    "1-3 p: pzppmvp\n" +
-    "4-8 b: bjbbvbbzbbbbbqbxxf\n" +
-    "4-5 p: hcprp\n" +
-    "5-9 m: mmmmvmgmmmmj\n" +
-    "2-8 z: zzfzxjfz\n" +
-    "16-17 z: kzzrdzzzwzzzzzzznzzz\n" +
-    "3-4 d: gddsd\n" +
-    "1-9 m: mmkmxmmmjh\n" +
-    "14-15 f: fffffffffffsfqff\n" +
-    "10-11 w: wwwwwwwwwhw\n" +
-    "5-6 q: nqcqqspqq\n" +
-    "2-4 b: bbbj\n" +
-    "8-9 l: llvnqlllwsll\n" +
-    "6-7 t: wttttttt\n" +
-    "9-10 n: nnhnnnnnjnn\n" +
-    "1-2 g: gdgg\n" +
-    "7-8 v: vmvvvvvxv\n" +
-    "8-13 v: vvvvvvvwgvvvvx\n" +
-    "6-7 m: smmfjfmscmpmmp\n" +
-    "3-5 m: mmhbmm\n" +
-    "3-4 t: tttft\n" +
-    "5-12 l: xslklnmkpmbl\n" +
-    "19-20 h: hhhhhhhhhhhhhhhhhhht\n" +
-    "4-8 f: ffffffhlf\n" +
-    "1-3 k: khkg\n" +
-    "15-16 s: sssssssssssssssb\n" +
-    "7-10 j: jzjjjjjjjw\n" +
-    "5-7 w: bszqxhws\n" +
-    "7-8 l: tknllgzl\n" +
-    "10-12 g: gggggggggmggg\n" +
-    "2-4 s: sgns\n" +
-    "11-17 h: bqrhkhhhjhswbhzhkhh\n" +
-    "8-15 d: gdddhdddddgjddddwdd\n" +
-    "8-12 s: gssbjtdsssjtsw\n" +
-    "1-3 p: pfppp\n" +
-    "2-4 t: tttw\n" +
-    "5-10 w: zzcwwwwwwkwwwqws\n" +
-    "1-7 c: ccrmhdchwbr\n" +
-    "7-11 g: xzgnggggrggrg";
+export const DAY2_INPUTS = [
+    "8-9 x: xxxxxxxrk",
+    "5-8 f: fxffmfff",
+    "2-5 c: ccspwpc",
+    "1-4 g: gggg",
+    "9-10 l: lllllllllk",
+    "1-3 j: djjfz",
+    "3-4 n: nnnmn",
+    "8-9 l: llllllllc",
+    "4-5 v: vvvvm",
+    "3-4 t: ttnt",
+    "4-5 w: wrwws",
+    "12-14 x: xxxxxxxxxxxcxxxx",
+    "9-10 q: qqqqqqqqtq",
+    "4-5 q: qsktqncqqqdn",
+    "2-7 h: ngkhcthb",
+    "9-11 r: rrqrrrrpcvs",
+    "3-6 c: rccbcc",
+    "7-8 k: xpkmjlxkt",
+    "1-5 l: zcwdhpkvz",
+    "4-11 r: rhmzhrxrdrrtddj",
+    "11-15 g: lggndgggsggggtdggg",
+    "6-12 m: mmmmmmgmmmmmwm",
+    "4-9 z: zzzgzzzzz",
+    "4-9 k: kkkkkkkknk",
+    "9-14 l: fldlllllldqllwj",
+    "1-10 k: sbnxkmtbgdf",
+    "2-3 v: tjzvnfv",
+    "3-4 d: dddd",
+    "1-2 l: ltfwjqjlqpnbqmnj",
+    "2-5 r: rrrrr",
+    "9-10 v: vvvvvvvvvdv",
+    "16-17 j: jjjjnjjrjjjjhjjzqjj",
+    "10-19 q: qqqqpqqqktqqqqqtfhq",
+    "17-18 c: ccccccccccccccccmc",
+    "3-7 f: kcpnxfffpv",
+    "4-7 m: mrzmmtsmmmb",
+    "8-10 l: lmlllllllnlb",
+    "1-3 d: bzndm",
+    "2-13 s: szsssjsssssssss",
+    "3-8 b: bbbwbshbbbb",
+    "15-18 h: hhhhhhhhghhhhhzhhh",
+    "6-10 b: zbbbtbswrn",
+    "12-14 t: nttttttttttstzgt",
+    "7-12 f: vffcmffwfjpk",
+    "3-18 r: frvkrwrlrrdbdrrrrxnr",
+    "12-13 k: kkkpkkkkrkkxkkk",
+    "6-11 b: bbbbblbbbbbw",
+    "4-5 f: tfdjf",
+    "7-8 m: cqmmmzmmmmgm",
+    "2-4 j: jjfx",
+    "3-5 v: xvvvsq",
+    "9-10 s: sssmsssshgsd",
+    "1-6 t: tptbjsttt",
+    "4-15 z: zzzgzzzzzzzzzzz",
+    "4-5 p: mxpnp",
+    "2-3 n: knwfnnj",
+    "10-11 s: sfswsbssgssvp",
+    "12-13 d: dwndddddddlnddrdds",
+    "14-15 k: bcvpdjkkndkmkrg",
+    "10-13 x: xxxxxxxxxnxxz",
+    "5-10 f: fffkffgspffffzcf",
+    "11-12 t: ttttqtttxhtzzttt",
+    "15-16 k: kkkkkkkkkkkkkktk",
+    "6-8 b: bfbbbbtkbb",
+    "2-7 h: hlhhhhgh",
+    "3-11 q: ldbtqbsfkqqcrl",
+    "10-15 q: qqrqqmqqqqfwqfzqqxqq",
+    "3-5 r: ldtrrxrnqrhqnhkrv",
+    "9-10 n: qnkvnnfnznnnnjn",
+    "1-8 w: wwwrwwpxmwsswwzwzww",
+    "1-4 f: zfwtzx",
+    "1-8 w: wwwnnwfv",
+    "9-11 r: jrrfgrrrzdr",
+    "15-18 b: bbbbbbzbbbbbbbsgbb",
+    "16-19 t: sfgfffhscvpdrqtvsmh",
+    "7-8 k: kkkkkkrk",
+    "9-11 z: fszzzzzzszzzcz",
+    "1-14 k: lhkrkkkklkkkpkfkk",
+    "5-6 s: sssscs",
+    "11-13 j: jjjpnjjjjjkjjj",
+    "1-6 x: mxhjgxbt",
+    "9-11 t: xtltttttktg",
+    "4-12 z: zzkdzwzzzzzfzz",
+    "13-16 j: jjjqjjjcjjsjdjjjjj",
+    "13-14 h: bhhhhhhhhhvhhhhhh",
+    "6-7 k: vwllpkb",
+    "1-5 c: sbnmbhcjlczjrc",
+    "2-11 c: skrtgbzdklcxqrwr",
+    "16-17 r: rvnnjknhswckcbrmr",
+    "5-6 b: btbbbnbb",
+    "3-5 c: ccpcm",
+    "3-7 h: hhvhvbhfth",
+    "2-11 d: ddbddlddvdfdwxwxd",
+    "6-8 m: mwmmmmmmmmc",
+    "1-5 l: lgwrlpmnfnzlczkpflt",
+    "4-6 x: cgbncxtwsvjwtbjqxzz",
+    "6-13 h: tnhshhkhhhjsdhrbh",
+    "1-2 s: gpzrf",
+    "12-14 p: pxpzpppfpppppxpp",
+    "2-8 j: jddjjjjtjjqpj",
+    "3-13 v: vkvvvvvvvvvvdvvvvvv",
+    "4-16 b: bbbbbbbbbbbbbzbdb",
+    "5-6 b: bbbbbbb",
+    "2-4 v: vvvhv",
+    "13-14 w: wwwcwwwwwwwwtww",
+    "1-7 g: gdbgpncbdgk",
+    "13-18 g: ggggskgggcgggghgsvr",
+    "15-18 c: cckcccccccccccgccccr",
+    "4-6 l: klflll",
+    "17-18 g: gggzgggggggggggggg",
+    "1-3 m: kmmmmmm",
+    "5-10 s: qxstrsbxkssksc",
+    "16-18 r: rrrrrrrrjrrjrrrrrvrr",
+    "6-9 c: rgcscfjccvzgcccqc",
+    "2-5 m: mmvmp",
+    "1-11 z: zbsdnzstzsbzzlj",
+    "6-7 v: vvvvtvqvpv",
+    "11-12 x: xxxxxxqxxxfnx",
+    "4-15 h: hnthvnjhzhqhwvwhh",
+    "4-12 g: dggggrvvgmcldfgqbggj",
+    "11-12 l: lllllwllllvn",
+    "1-3 l: lpplz",
+    "5-6 v: vzndfwd",
+    "6-8 j: vxjjddjjjmjpjw",
+    "6-7 k: kkkkklkk",
+    "2-9 g: zgqmwlgfrsz",
+    "1-2 k: kkqk",
+    "2-13 h: clhmnhhwhpdhh",
+    "3-14 z: zzxzzzzzzzzzzg",
+    "9-10 v: vvvvvvvvpf",
+    "17-18 z: zzzzzzzzzzzzzzczgz",
+    "15-18 j: jjjjjjjjdjjjjjjjjx",
+    "2-7 w: zqfxwwwwww",
+    "4-11 r: qrcrrzrqnrhrn",
+    "9-10 q: jqctxwmccqqpcqqbllq",
+    "4-5 b: tbbbk",
+    "1-2 r: rsvmjrbprjjvdkcfk",
+    "9-11 v: vvvvvvvvvvv",
+    "1-4 c: ccbjccccc",
+    "7-8 l: llllllql",
+    "5-8 c: cncccccwc",
+    "3-4 d: kdzdkjdqkvhdz",
+    "6-7 j: cjjjpqj",
+    "11-16 t: ttttttttbttttttttt",
+    "5-17 v: vvgvqvxvsvvvbvvvvvvv",
+    "12-18 k: kkkgkkkkkskkkkkdkwk",
+    "1-7 p: ppqqpjp",
+    "1-13 v: fsvbwvvvmvtvv",
+    "8-10 q: qqmqqqqbqmvvq",
+    "14-16 m: mmmmmmmmmmmmmmmgm",
+    "2-5 r: prrrmr",
+    "6-12 j: jhjjjzjpjmjjvj",
+    "5-6 x: xxxxdx",
+    "4-5 n: nnnsnn",
+    "2-6 j: jjjjztj",
+    "3-8 j: tzjzbjbqqjlww",
+    "13-15 z: btzzwrzbzmdcdzz",
+    "1-2 j: ddjkbx",
+    "4-8 b: jbbkbqsblcbhprzqtb",
+    "3-5 b: bbkbb",
+    "6-8 f: fffffffff",
+    "2-4 l: lsprl",
+    "17-18 t: ttttttttttttttttth",
+    "1-4 p: pppf",
+    "13-18 m: mmmmmmmmmmhmsmmmmmmm",
+    "7-8 s: sssssssss",
+    "18-19 t: ttjtttttttttttttttjt",
+    "2-5 j: jjddt",
+    "6-12 r: trrnrcrnrrrr",
+    "6-7 h: rhhkhhthdsh",
+    "6-7 s: vpxmpdstfdv",
+    "9-10 p: ppppppppwpppp",
+    "2-4 h: hhhh",
+    "1-3 h: hhthhhhfhhhhh",
+    "4-5 k: dkbknt",
+    "7-10 d: kbdddddddsdd",
+    "11-16 s: ssswksjsssgsssssspt",
+    "5-8 b: vxlbbbzmbkktwrtlbt",
+    "2-8 h: hhmhvszx",
+    "6-8 g: ggzggggxgg",
+    "3-4 q: qqqp",
+    "4-9 v: vvfvqzbvvh",
+    "10-13 g: xggmgglfgxpsgggggg",
+    "1-8 b: bgsblbskxgkt",
+    "7-10 b: dbbqhftgblbbb",
+    "1-2 j: wjjgrdznbn",
+    "12-13 z: mzzjzzzzzzzgzzsz",
+    "4-9 m: psmmmmmbzmvmmm",
+    "8-9 n: nnnmnnnnpnnn",
+    "2-3 p: qpjhhgkp",
+    "6-7 h: phhhwhhmfh",
+    "2-4 b: bkrljb",
+    "11-12 c: crccbcccccccc",
+    "3-14 r: rrrrbrrhrrrrrzhr",
+    "5-6 c: ccrcdcwcc",
+    "1-17 k: kkkkkkkkkkkkkkkklkkk",
+    "4-7 k: kkkkkkvkk",
+    "3-4 w: rqwc",
+    "6-12 k: kkxkklkkkkkk",
+    "2-3 w: dpww",
+    "15-16 h: hhhhhhhhhhshhhwhh",
+    "2-6 x: gxxmthnbj",
+    "3-5 s: sbhsc",
+    "10-12 q: qfqqprqqrmqqq",
+    "9-11 f: hkpmjfgfrcfnfz",
+    "2-16 f: ffffffffffffnffq",
+    "4-5 f: fffcf",
+    "2-7 d: tdzqcdd",
+    "1-4 h: hnxz",
+    "16-17 g: gggggggtgggggggqx",
+    "2-4 n: nngcd",
+    "4-6 r: rrrkmf",
+    "5-6 g: ggghgggg",
+    "7-9 p: qkmpfzpptdjsbppcthpp",
+    "9-13 t: ttttttbtttttt",
+    "5-7 l: cldkllzgxldwlcdll",
+    "5-8 f: ffpqrftfsjd",
+    "6-13 t: tbtltkltttsjttkr",
+    "6-17 w: wtbwwpwwwhwcwtwzzww",
+    "2-8 x: nxsqbdmkqtx",
+    "2-5 s: fsrsvss",
+    "9-12 x: nxxxxxxxmxxxnx",
+    "1-16 j: jjlmjrgpnkgjjwhjhxt",
+    "6-10 k: kkxkkkkkpfkkl",
+    "3-9 l: lhzgllglllrtt",
+    "18-19 p: pppppsppppppppppppp",
+    "1-8 b: bbbbdbbwbbjkbbj",
+    "16-18 p: pppppppppspppptppgpt",
+    "1-5 w: wnmwff",
+    "3-4 v: vvvvm",
+    "1-16 j: jbhjjbjhwjjgjxjw",
+    "8-17 j: jjjjhjjjjjjjcjjjs",
+    "3-4 n: nnnn",
+    "17-18 t: tttttttttttttxttwtt",
+    "3-4 k: kbpkk",
+    "2-3 n: ndnn",
+    "9-13 m: mmmmmmzmwmmmm",
+    "1-10 d: djdddddldddddddd",
+    "9-13 v: vjvvvvvvfvjvv",
+    "13-14 m: mmmmmmmmmmmmmm",
+    "4-10 x: xnxczxxxxxx",
+    "17-18 h: hhhhhhhhhhhthhhhmhh",
+    "3-13 z: zzmzzzzzzzzzzz",
+    "3-6 w: wwtwwww",
+    "11-14 v: ghvvvvvvvvvlvkvvvsvd",
+    "2-9 r: qrdqvchhjgrpgj",
+    "9-10 w: wwwwrwwwww",
+    "3-5 c: xcgccc",
+    "6-7 z: zzzzzfz",
+    "16-18 b: bbbbbdbbbbbbbbbpbp",
+    "3-5 s: ssssw",
+    "3-4 z: zztzzzzzzz",
+    "7-8 j: jjjjjjpj",
+    "11-12 b: mbsjljhbbnpczlnbm",
+    "1-4 k: tkhk",
+    "9-10 j: jjjnjjjjjz",
+    "3-8 v: nvrbvvmrvhcs",
+    "1-5 z: szdcdjphttvnrd",
+    "2-7 m: zmmmmmhvqhpmmmmsmmv",
+    "7-8 t: tbtttttghcdptljtk",
+    "2-9 s: slssssssss",
+    "2-4 g: jgnn",
+    "3-8 s: ssksssss",
+    "6-10 t: bthxljrxhth",
+    "4-10 d: dddddddddqddddddddd",
+    "8-13 c: ccrjcccccqjcc",
+    "6-8 z: tlgdknkzxrghz",
+    "8-11 t: jttttmtbttdt",
+    "1-2 x: xhxx",
+    "3-4 c: cccj",
+    "9-10 v: vvsvvvvvvv",
+    "4-8 q: qqclqqqqtqqpzqj",
+    "7-9 w: wwwwrwnwj",
+    "1-3 w: cbwmzwwr",
+    "6-7 l: llllllz",
+    "1-8 h: rhzhhphhmhfnh",
+    "1-5 t: ktrtv",
+    "6-11 c: kfccccdcccvxwc",
+    "4-7 q: qrqqzcx",
+    "4-7 z: wcxzjrlhfbnczdj",
+    "7-14 k: mckkdnkrkpkknkdkckfz",
+    "1-6 v: vvvvvbv",
+    "2-6 p: gmpszppxppp",
+    "3-16 k: ggxkknwkkjkqskzktgk",
+    "15-17 z: zzxqmnclzxzfvznzb",
+    "3-6 x: xxxxxpxxx",
+    "17-19 q: stvktzjwzbrbfmbqjsq",
+    "4-6 b: bbbsbbb",
+    "9-10 p: spttdpplsppdprxrvpgm",
+    "4-5 w: wwwwn",
+    "10-16 r: grnjxrwrrrzdrpmjtrrr",
+    "14-15 q: qqkqqqqgqqtqqqrqhq",
+    "4-8 q: qqqqzkzsqq",
+    "10-16 m: mmmmmmmmmwnmmmmmmmmm",
+    "5-10 h: hhhhzhhhhhhh",
+    "5-11 p: mkpphppzhwqpgpsqcshz",
+    "2-4 l: nnllsl",
+    "2-8 q: bqjtjmfqsqgcjvgf",
+    "2-3 w: wwsw",
+    "12-16 s: lmsjpgzfldmrhrmf",
+    "4-6 n: gnnnnv",
+    "9-12 s: xmwssfsssssnssxwds",
+    "2-4 h: vzfh",
+    "1-2 n: ngdp",
+    "4-7 q: sqqnhqqsvqqq",
+    "5-6 k: zvkdkldkg",
+    "11-12 w: wwwwwwxwwwkw",
+    "7-11 p: hgbsfjpmbkz",
+    "1-4 v: rwqvv",
+    "4-6 s: pssssss",
+    "7-10 m: mlmmmmmmmrmmx",
+    "1-2 n: hnmqzsn",
+    "11-12 n: nnnrnnnnnnnbn",
+    "1-2 k: qbxhwswsxzkdsxcbtwrw",
+    "13-15 n: nnnsnnnnnnnntnc",
+    "17-20 n: nnnnnxtnnnnnvnndjnnn",
+    "2-17 n: npnnnnnnnnnnnnnnnnn",
+    "6-13 t: ttkrxzdkttltszskt",
+    "10-15 k: mkfllgkdnvjptdh",
+    "6-9 m: mmmmmjmmm",
+    "14-15 w: wwxwwnwwwwzwwkgqkwww",
+    "2-10 k: zmgrvrzlmkgcddcrxk",
+    "12-14 c: cccczccccccjcjcccc",
+    "11-15 m: mmmmdmmmmmmmmmqm",
+    "18-19 r: rrrrrrrrrbrrrrrrrxbr",
+    "6-10 b: hnbnbblvpd",
+    "10-12 x: pwpxxqnxxxxxxvzcxx",
+    "3-4 n: nnnpj",
+    "4-6 n: nnnwnnjn",
+    "3-4 k: kkmk",
+    "12-14 j: jmjjjjjcjjjlwjjdj",
+    "3-4 q: gqqxq",
+    "7-10 z: zzcztxzzzzzx",
+    "2-14 q: cqnqbvqsglczhb",
+    "3-6 r: mrrhrn",
+    "14-15 z: gzdzdszdkrfzzgpp",
+    "4-10 j: jjjjjjjjjbj",
+    "3-7 w: vrwwwwhwwkw",
+    "6-8 s: shswpbjss",
+    "2-4 h: ghvnhh",
+    "3-8 m: mmmmxmmvm",
+    "5-6 g: ggxgxg",
+    "1-2 v: vzvv",
+    "2-7 r: qgmgrxrgrgv",
+    "5-15 z: zzzzbzzzzzzzzzz",
+    "3-10 t: tttttdtttwtl",
+    "1-4 w: kwws",
+    "1-3 h: crxhhkhc",
+    "5-6 f: nfffnttvfcm",
+    "9-15 d: ddddpdqddmdjddz",
+    "7-8 c: mjfqkmclzphkcnjrg",
+    "4-7 l: lcblmnlpltgbnsjll",
+    "5-8 v: rvcvvvvbvv",
+    "3-4 b: kbblb",
+    "12-17 v: vvzvvvdrvvvvvctspvnz",
+    "4-9 d: dddsdddddddddsd",
+    "6-7 s: shvgwsspmsnr",
+    "5-10 k: dghtgjbkkk",
+    "1-5 m: mmmcsxm",
+    "1-3 q: bvqqk",
+    "7-9 c: wccsccxcfkvvkctzc",
+    "5-6 k: jdkkcqkkg",
+    "5-8 g: tgggqpzfgfg",
+    "19-20 t: ttttttttttttttttttth",
+    "1-9 n: dhmnnqnnnpnnr",
+    "4-7 w: fwmwwrz",
+    "1-3 p: qcnppb",
+    "1-14 f: jtrcqftxkxfmxffffhf",
+    "10-11 z: zzpzzzzzzkzzz",
+    "13-15 h: phhhfhhhhlhhbhhhh",
+    "10-12 t: tttttttttmtt",
+    "6-9 s: psssxsscssss",
+    "3-4 p: ppbgp",
+    "11-15 b: lpjbbbpbbbrhbbbb",
+    "9-10 c: cchccccccl",
+    "3-9 t: wtltcrnvtmgtf",
+    "10-13 g: rkgggkfvcgktrhx",
+    "16-18 k: kkkkkkkzkkkkkkkfkk",
+    "3-8 q: txxqqjbqqd",
+    "7-16 j: gjgxwjjwjwvhjkqvr",
+    "4-12 t: xttzrmdtjvttcn",
+    "3-5 c: lcvcczsjd",
+    "14-16 n: nnnnnnnrmnnnnnnpn",
+    "4-9 c: cccfrpclcc",
+    "13-14 l: klllllllllllll",
+    "2-5 l: rlxvflqllllvsm",
+    "9-10 h: rhbhhhhhrhh",
+    "3-4 p: pftpp",
+    "1-3 z: zwbjlzpwldx",
+    "12-16 s: sbqwfmsstlsqbsws",
+    "8-9 g: gtqggjqgn",
+    "4-14 w: twwtwwwwgvwwwwswpwr",
+    "14-15 x: xxxxxqxxvxxxpxhxxx",
+    "11-12 c: ccdccccxccclmcccc",
+    "8-10 w: wwwwwwwrwwwwwww",
+    "1-4 f: fffqfpffff",
+    "3-4 p: pppq",
+    "3-8 l: dglblkmlllklxqsl",
+    "2-4 k: wkskqwkccrtv",
+    "10-11 l: lllllllllsl",
+    "6-11 b: qkgjbcqqhbqxw",
+    "1-3 q: qvqpp",
+    "10-14 d: xzhdlcwkqqzzbdtf",
+    "14-15 f: ffffffffffffftq",
+    "7-8 q: qqqqfqqdrqqh",
+    "4-9 h: ljfhrhhmbr",
+    "11-13 r: rrrrwrrrrkrhh",
+    "7-10 z: zzzzzznkzb",
+    "3-5 n: kvtnn",
+    "1-3 g: ggng",
+    "5-8 g: gggggggg",
+    "2-9 c: csnczjctbcmcccc",
+    "11-12 n: jnnnnxfknnndnnfnr",
+    "1-5 d: vdmddddd",
+    "7-8 z: zzzrztzmz",
+    "6-8 z: zbzzsmzzjm",
+    "1-2 r: trrrcn",
+    "5-7 m: msmmxcm",
+    "12-13 h: hnvhztwhhpwhqkf",
+    "10-11 t: wprthmcttqtt",
+    "4-6 r: tttrssfrrbxjrzgr",
+    "3-5 r: zrsnr",
+    "8-12 z: zjqzzzxdzzzb",
+    "16-17 x: gxxtswfpzxxpxbvxq",
+    "4-5 h: hhhhg",
+    "19-20 f: ffffffffffffffffffrf",
+    "3-4 l: llbsq",
+    "7-15 k: knkkkkfkkkkskkklkkkk",
+    "3-6 q: qqpqqb",
+    "7-9 t: ctztttttpjvt",
+    "1-2 x: xmpx",
+    "10-12 c: cctccdcchzcppctq",
+    "6-7 s: lssnssxns",
+    "4-13 m: wmngjsmtmmcjmdmm",
+    "2-9 h: jhmdxgchltdgj",
+    "12-13 c: hcjcrrlsgcccn",
+    "7-10 t: tsbtzttzqj",
+    "18-19 c: sccccccccccccccccczc",
+    "3-4 g: ggghw",
+    "7-12 p: vdlpjjpvmrmpskp",
+    "8-10 v: hqwvvtvvtvvvvjv",
+    "2-4 k: nkgv",
+    "1-3 h: hhxmhn",
+    "11-13 d: ddddddddddcddd",
+    "7-19 g: ggggmgggggggggggbsmm",
+    "5-13 k: kbkkkkmkwblkdf",
+    "1-2 j: jjjzjjjjwjjjj",
+    "6-10 g: gfsggjgggnl",
+    "2-3 s: cskcs",
+    "3-11 m: mjvqhbhjgqmq",
+    "1-11 q: qdwqqqbqjmzmdhxl",
+    "2-12 k: kkkkkkjwkkkckkzr",
+    "9-12 v: vvvvvvvvsvvv",
+    "3-4 r: rjmxr",
+    "2-7 k: kkpvkkr",
+    "3-4 h: hnzhhhsvfbswzxkslt",
+    "3-4 n: qbnmhhnhdchbnnvk",
+    "1-8 v: vvvvvvvv",
+    "3-4 j: jjmjj",
+    "9-18 f: ffffffffzffffffffff",
+    "4-6 f: qgfjffbfj",
+    "1-3 m: mmmmmtmmzm",
+    "2-5 d: qdddf",
+    "4-5 w: wwswbkwjcw",
+    "5-9 g: jvhgwlllgvxrfg",
+    "1-2 p: fhvmh",
+    "15-20 m: mmkmmmmmcmmmmmmnncmc",
+    "13-16 l: llncvllllllllllglz",
+    "16-17 l: llblllllkllllllndlgl",
+    "5-8 s: ssstwvsts",
+    "1-2 d: rddddldxdsrtddd",
+    "6-7 d: dddkdpdddd",
+    "4-5 w: wcwgw",
+    "9-11 r: lrfsrhrxqrrnrjggr",
+    "1-9 w: pxpfwbmxwdgvbhzlt",
+    "11-14 q: lhnlmdssgvqqskr",
+    "8-13 x: vtcxxmxswxmxd",
+    "5-13 r: sbpdrpgbvdrrrx",
+    "1-5 m: bmmmm",
+    "1-2 m: fmmsrft",
+    "2-6 v: pvvrvb",
+    "6-7 s: sssssksf",
+    "3-4 c: zclc",
+    "11-17 q: qqqqqqtqgqqqqqqqmq",
+    "1-6 j: jjgcrlm",
+    "3-4 n: sfnn",
+    "12-13 p: bppppppppppmkp",
+    "6-7 q: dtgqtqqlqqqqsq",
+    "5-6 v: vvvvqvv",
+    "7-8 d: ddwddbjdd",
+    "11-16 m: mmmmmtmmmmmmmmmfm",
+    "18-19 v: vvvvvvvfvvvvvvvvvvr",
+    "1-2 j: jljjj",
+    "3-9 r: rrrzrnrsdrrr",
+    "7-10 w: twslbwxwbwwwwww",
+    "9-11 v: rpvvzvxvvvzvvv",
+    "3-5 d: zzvtdt",
+    "7-11 p: prldqxjtpnppx",
+    "1-10 z: lzzzbcfgzz",
+    "11-14 h: hhhhhshhhhhhmph",
+    "6-12 v: sfbvvwvvjvkvvvd",
+    "8-10 f: fffhfffffnc",
+    "7-8 g: gqjgfwfggghggh",
+    "8-9 x: zgxxxxmhxxxx",
+    "12-13 z: zzzzzmnbzzzzgzzzr",
+    "2-3 c: cvcsccfg",
+    "3-4 s: ssws",
+    "5-8 c: cccwcccp",
+    "4-6 c: ccccdlxcc",
+    "5-8 l: prlzlxcccl",
+    "1-4 g: qlng",
+    "8-12 c: ccccccckcccccccccc",
+    "2-8 d: ddpddqjhbbr",
+    "13-15 j: jjjjjjvjjjwjjjqjj",
+    "5-8 x: xxwxcxcnxxxxfx",
+    "4-6 t: dtfbctcgtzrtntw",
+    "5-12 r: rrkdrrrdrrrx",
+    "6-7 h: rhbghkhchjmbkhhm",
+    "7-9 z: zzdzzgzpz",
+    "4-5 v: lvnmq",
+    "1-6 w: wwwwwwjw",
+    "14-16 n: hpnnnnnnvnxnnnnlnn",
+    "18-20 r: ftrrzrsrrrgsrzhwrbrr",
+    "12-13 s: ssfbssssssssws",
+    "2-9 g: gfvcgzgjb",
+    "2-4 n: nntqtn",
+    "4-5 h: vqzhzhrxhh",
+    "4-5 g: ggqkg",
+    "1-2 x: xzkx",
+    "7-11 j: jjdjjmddlrjgjjjqzls",
+    "1-3 v: vvvctbv",
+    "4-7 s: fwmsssdss",
+    "10-11 p: pppppppppbppp",
+    "13-14 q: qqqqqqcqqnzqzqqqqqt",
+    "7-14 z: rhzzwqmzzzzxzzzzcgz",
+    "8-9 b: bgbsbbbbwbsbblbcr",
+    "7-8 h: hhhhhhghkh",
+    "1-2 g: ngct",
+    "13-15 f: fffffffffffvmfg",
+    "4-7 h: mdghhfs",
+    "12-14 z: xzjzzzzvzzzgzz",
+    "3-4 p: ppsp",
+    "18-19 q: wqkqxtkfhlmrxndwsqcc",
+    "5-14 p: ppppbppprnprwpwpp",
+    "3-4 j: jjjcjj",
+    "2-3 b: blbn",
+    "4-6 g: grggvcgg",
+    "2-4 h: hghhh",
+    "4-6 f: fffffm",
+    "2-4 n: qsdnxt",
+    "2-5 q: qqqqqq",
+    "9-12 w: whlqgwcrqxwwrvw",
+    "6-7 z: zzzzztqzz",
+    "7-10 l: slnzmdlslsrc",
+    "4-8 q: jqqqjqqltd",
+    "5-6 h: xjzbdbsfjfrxhxqlbbrt",
+    "6-12 w: wwwlbvwwwwwwww",
+    "2-5 c: zcpcf",
+    "4-5 h: hhhmh",
+    "16-17 h: hhhhhjhhhhhhhhhgh",
+    "12-13 f: fffffffffffmk",
+    "4-5 d: dddgd",
+    "4-10 p: xppvfpsgpphcpppml",
+    "3-5 w: wwtwwj",
+    "7-10 w: twwwwgtwjwjwww",
+    "5-10 z: zzzzzzzzzgzzz",
+    "13-14 t: sjxsttgttttbqtthtbd",
+    "6-8 c: ccccmdrcct",
+    "2-4 v: vcxm",
+    "3-7 k: dkkzfwzkn",
+    "4-7 v: cjrvvxtsvvvv",
+    "11-15 s: ssssssssssrssss",
+    "1-8 j: jskfjjjj",
+    "2-3 p: pgnpn",
+    "4-5 p: psplppc",
+    "1-3 n: nnnn",
+    "11-12 x: xxxxmxxxxxzxxdrqx",
+    "1-4 k: kpln",
+    "6-10 p: pphppppppkp",
+    "2-4 v: cgxvvxkzvs",
+    "6-7 m: mmmvbmmjsrmtzkddzmxm",
+    "5-9 s: xcshstsdslsxms",
+    "1-17 m: vmjmmmmmgmmmmmbmst",
+    "2-3 g: ghgg",
+    "5-6 k: kkkkmkh",
+    "5-6 c: lccfcccsgc",
+    "4-6 n: nncnbnmznngnj",
+    "8-11 j: ljffjmrjmjm",
+    "4-9 j: rqxjwfsrfzbxjjmnflj",
+    "3-6 s: zscszpss",
+    "3-4 d: qldtdht",
+    "15-17 x: xmxxxxxxxxxxxxdxx",
+    "1-4 m: mmmmmmm",
+    "2-9 v: vvvvnvzsvv",
+    "3-4 n: nndn",
+    "9-13 s: crxnbslshlbgsh",
+    "1-10 c: cczkccchfc",
+    "3-5 d: dddddwv",
+    "7-9 n: hqrhnxnzfnkqnvnnnng",
+    "3-4 c: cwcvfdc",
+    "6-8 l: llllllltl",
+    "4-6 q: qqqqqm",
+    "1-5 x: xhmxxxtwxdxkk",
+    "5-17 f: gffrffffmffcbmfffff",
+    "15-16 x: xxxxxxxxxxxxxxcl",
+    "3-7 z: nmjzzdzz",
+    "9-12 v: vzvxvxvwpvvvvvcvxpmv",
+    "4-6 w: wtwwwm",
+    "3-12 d: dddddzdddgdw",
+    "2-4 p: pqpk",
+    "2-4 g: pqqgbwqzsjtcrmg",
+    "3-5 d: xdhsdpndjhd",
+    "9-11 t: ttbtttttqtt",
+    "2-11 d: kddwtcwxgkclxcnfgm",
+    "1-4 v: hgvvfvjvz",
+    "4-5 s: ssssm",
+    "2-11 g: gmggvgggggn",
+    "3-6 c: ccrccvr",
+    "1-4 n: nznfnn",
+    "1-4 f: sfxffff",
+    "17-18 q: qqqqqqqqqqqqqqqxhq",
+    "2-5 l: zllhn",
+    "7-10 v: cvcvvvvvvqxbv",
+    "9-13 l: lllgllllllllql",
+    "3-11 g: mlgwrbcsdflzm",
+    "4-5 t: gtbtcfqrxfxtjptgpqr",
+    "5-8 d: gfdzjkvd",
+    "4-5 f: ftfff",
+    "15-17 p: pppppppppppkjpppft",
+    "1-3 d: tcdd",
+    "3-12 n: tnxnnbshnndnnhbn",
+    "5-8 q: pqlkptqqqcqbqrr",
+    "8-9 l: lllllkllb",
+    "10-13 j: rsfjlxjtfjrkxn",
+    "8-9 w: wmzvwwwwdwzwwt",
+    "12-14 w: wwwwwwwwwwwwwm",
+    "6-7 g: qwggfqgnvrggg",
+    "15-16 x: xxmxxqrlgnfxxsxr",
+    "4-8 n: gnnlnnlncnrnnqnwncd",
+    "8-11 k: kkkkpknzdkkck",
+    "4-5 m: mmmsm",
+    "3-4 n: nnxn",
+    "7-11 c: cckcdzcjldcwfcr",
+    "12-14 j: wxvjvpjjjpjkjj",
+    "1-13 h: fhhcfzhhhhhhhh",
+    "11-12 p: pppppwfpppspp",
+    "3-4 t: tktptt",
+    "1-6 n: nnnnnfnn",
+    "6-15 l: lllllmwlllllllll",
+    "5-6 q: qqqqqdqlqqq",
+    "4-8 j: bjjxhjjd",
+    "2-9 w: tdwpwdkcw",
+    "6-8 l: llllltbr",
+    "13-14 f: fffffffffffffj",
+    "4-11 z: wxzkzzzzzzzt",
+    "7-11 w: wwkvcfwfsrcw",
+    "4-9 b: bzbjgbbbb",
+    "17-18 k: kkkkkbmkdkmckkvbkk",
+    "5-6 j: ngffrjspcz",
+    "16-18 q: qqvqqqqqqqqqqqqhqqqb",
+    "12-15 s: sszszstsgsssssdssssq",
+    "5-6 d: dddddg",
+    "4-8 s: ssssvnss",
+    "16-19 g: lgzswgbfwghgggnglqg",
+    "8-9 t: tttttttltttt",
+    "14-20 b: bvbbjjbbbwttbbblbbbp",
+    "4-7 c: cxcdhmm",
+    "1-11 g: gkvjfgjlggpjb",
+    "1-2 w: whmwwcwqgw",
+    "6-16 p: lgwrlppdfpxbltmqlp",
+    "4-7 r: rwrrhhrqgrr",
+    "12-15 j: jjjjjjjjjtjnjjh",
+    "3-5 k: kkkkkkkk",
+    "7-9 p: wpxpphfpp",
+    "2-3 z: zfzz",
+    "2-3 k: nbsdwkqktssd",
+    "7-12 g: gggggpnpdssgwggx",
+    "6-8 r: frrrrjrr",
+    "1-7 l: llllllll",
+    "11-16 x: bxxsqxxxxxxktxxz",
+    "3-5 n: nwbknpnnvnr",
+    "8-9 t: qtttfvttqnttttmtttdv",
+    "3-4 d: dfgk",
+    "5-7 f: ffwffff",
+    "9-10 c: cccccccpgr",
+    "3-4 q: qqpq",
+    "1-2 k: kmwvdkzwxlkk",
+    "1-8 s: sssljrsmsx",
+    "12-13 r: rsrrrbrnrhrrhrprrrrn",
+    "4-16 w: kfqncxdmjlwkfjmwhw",
+    "9-13 l: llllllllpllllll",
+    "2-4 m: mlmmdbbqqmgkcffxw",
+    "2-12 j: jjjjpjjjjjjrj",
+    "9-11 x: qxxdxxxxxxqx",
+    "2-6 v: svcsfvrfpbxpmvtscqjg",
+    "2-12 c: dctwqfthcdbcsklb",
+    "1-2 c: zcfrlczcpxcm",
+    "2-8 s: nspkfsvbfsw",
+    "5-10 m: dxvwmqmngmzd",
+    "2-3 w: twsxwvwzw",
+    "5-10 c: cccccccpcxrc",
+    "8-16 j: jjjjjjjmjjjjjjjjjj",
+    "8-16 p: ppppsppdpphppdxp",
+    "16-18 t: tttttttttttttttttcs",
+    "11-13 j: jjjjhjjjjbjgjjj",
+    "14-15 d: ddddddddddddddwdd",
+    "1-15 s: psgssjszssbssdsgds",
+    "14-16 z: zzzzzzzzzzzzzrzqz",
+    "8-10 v: vvvpvvvvvg",
+    "4-5 z: zzkzf",
+    "3-9 g: ggggggggfg",
+    "1-4 n: ckwcnhz",
+    "7-9 w: ckwwwwjwq",
+    "5-12 q: qbqwcqbvvxbq",
+    "4-10 x: xvxxxghnrk",
+    "2-3 d: pdpmdkvsmccpnp",
+    "3-11 f: lffffjfmzqplsfzfl",
+    "9-10 h: hhhhhhhhhk",
+    "1-4 x: bxxxxxmxx",
+    "10-13 t: rnnglkrgbrrwtqjmlbn",
+    "5-17 v: zfmxkbtjpvvvqdxcvvnv",
+    "9-10 j: kjkzjlnjjjjjjjj",
+    "13-15 g: gggggggggggwxsg",
+    "2-7 l: llhrxjl",
+    "5-6 s: hfszgwczxtsp",
+    "1-10 v: dqqvhttqqv",
+    "10-13 z: zctbpzzzzzpzdznzz",
+    "6-10 p: mpplqpppfhhqptphp",
+    "2-5 w: wwgbw",
+    "1-4 b: sbbbbb",
+    "6-15 z: hpzlzzzzzpzzzgdzzlzn",
+    "2-4 r: rhfrdqrxsb",
+    "6-16 s: crrtqsjqfssssgsssc",
+    "17-18 h: hhhhhhhhhhhhhhhnrh",
+    "6-8 f: xpgdffbblxxl",
+    "2-4 h: wzfmhhl",
+    "5-6 k: jkkkhk",
+    "8-9 c: ccccccccc",
+    "16-17 t: tttwttdtttttttvkttt",
+    "9-10 f: fffffffffh",
+    "6-10 l: zxclbtlsjlbls",
+    "2-6 m: mmjmms",
+    "8-11 r: rrrrrrxtrrrsqr",
+    "1-11 v: gcvxfvdkvvs",
+    "9-12 c: xgcjrmscgjmjfsdxcp",
+    "10-11 g: gggggjggggdg",
+    "5-7 s: ssssprssm",
+    "2-3 c: nzccfjcdxc",
+    "9-13 k: mdhkkgkkkkxkkvrkkk",
+    "6-7 s: sssssbsssk",
+    "12-19 n: xtlfpnxflxwblnjsnxnq",
+    "3-4 t: tdtltttlp",
+    "2-4 g: gggg",
+    "11-12 k: kkkkkklkkmmk",
+    "2-6 r: rsrrrrrl",
+    "3-4 r: rrzq",
+    "12-14 l: lllllplllklmlrd",
+    "2-3 d: dkdd",
+    "1-2 t: vttt",
+    "7-14 l: lmdkltvllhsnllnl",
+    "6-7 s: scssxssrsqfsjrcgdsb",
+    "5-6 d: tndddgrv",
+    "1-3 t: jhvtckvptnp",
+    "14-15 g: ggggbggzqggggdvgg",
+    "2-5 t: tvttt",
+    "4-9 f: hfsmksgnfh",
+    "6-14 k: kkkkkkkkkkkkkskk",
+    "6-7 w: wwwwwwxwcc",
+    "5-9 n: bnsvnnnqtpncn",
+    "5-7 v: vvjvfvvv",
+    "7-8 d: ddddddxd",
+    "13-14 b: bbbbbbbbbbbblf",
+    "1-4 l: lllml",
+    "9-12 p: ppppgppgpppwpdp",
+    "4-11 p: rpjpprbztgkxx",
+    "4-7 g: ggggzgtg",
+    "2-3 j: ncjjk",
+    "14-15 v: vvvvvvvvvvvvvvfv",
+    "9-10 l: llxllllhlzlsb",
+    "13-14 p: ppnppppppppppz",
+    "5-11 j: jjjvhjkjjjjzj",
+    "14-20 b: dbbbbbbbbzbbbbbbbbgc",
+    "5-6 m: mmdzzjmm",
+    "3-4 t: ttft",
+    "5-6 m: mmmmrmpmmmm",
+    "15-17 v: qhjrfvvbvplvvvvvq",
+    "1-15 t: gctmcdxttttvvtt",
+    "4-5 v: pfvcvcvrvv",
+    "13-14 n: nnnnnnnnnbnnknn",
+    "7-9 h: hhhhhhhhh",
+    "1-2 f: fhffgj",
+    "1-12 b: bbbbbbbbdbbk",
+    "6-7 n: nnnnnng",
+    "13-18 f: fffffffffffffffffs",
+    "11-14 b: bbbbbbbbbbbvbfb",
+    "10-12 h: hhhhhhhhhwhq",
+    "7-8 w: wwcwqcwwwpwbww",
+    "1-5 m: fmmmjmm",
+    "14-15 v: vvvhvvvvvvvvvvf",
+    "12-17 b: bbvbbbsblwbbbbbxf",
+    "1-5 w: stwwj",
+    "6-10 j: jjjjjgjjjj",
+    "1-4 l: zvcjqgqrvvfndlj",
+    "5-7 s: tswsgws",
+    "1-13 v: zfwvvvvpvvvvmvvvvvjv",
+    "1-3 j: rjjvpkknmmjmxpqrmx",
+    "5-8 s: mxgsrsssbstb",
+    "5-14 q: qqqqqqmtjqqqqqqc",
+    "1-7 s: sswdxsnbkj",
+    "5-9 d: ldnbdmrtv",
+    "7-8 w: wwwwwwww",
+    "7-8 g: gxggggpg",
+    "8-12 r: rrrrrrrrrrrkrr",
+    "2-5 n: nnbnsmpml",
+    "2-3 g: gsggggggg",
+    "9-11 s: kssssssssxns",
+    "15-16 m: bhsxvbrjhfzmmflm",
+    "4-7 h: wmhhhhzh",
+    "2-13 g: khdgzvpxgrcvgc",
+    "5-13 n: wnnnnslnnnnnjt",
+    "3-7 t: ttsptkgttt",
+    "1-7 m: ffqtfmm",
+    "8-12 p: pplppppspjpppq",
+    "17-18 r: rrrprrrrgrrrrxrrrzrr",
+    "3-4 f: ffzff",
+    "10-11 x: xxxxxxxxxxw",
+    "10-11 b: bbhbbbbwbbbbbd",
+    "7-16 b: htbbxcbsbtjgxdvjcbc",
+    "9-12 g: gggxggggsgvgqg",
+    "13-15 l: dgllcqgtslfvkwlb",
+    "10-11 f: fffvfffffffff",
+    "2-6 d: ddqtnb",
+    "3-11 m: mmmmsvqmmmcxkmm",
+    "15-16 f: fffgffffffffkffqff",
+    "3-4 s: hvgssssb",
+    "4-5 s: jslss",
+    "10-19 v: vvvvvvvvnvvvvvvvvvg",
+    "1-3 c: cmcqkckzzsczn",
+    "2-3 j: jjhm",
+    "10-11 j: jjjjmvjjjxkjj",
+    "2-3 r: rqrrtztrbpk",
+    "6-7 d: dddddrd",
+    "6-16 n: dzqnnsnmssnjznnnnnv",
+    "7-11 f: ffqrffhfffftfffff",
+    "2-8 z: zzzzkzddzzb",
+    "2-7 j: nhjjjjjhjs",
+    "7-10 l: xlltwhllrd",
+    "10-12 w: nwrsqlwhqkcl",
+    "15-16 w: wwwwwwwwwwwwwwwl",
+    "11-12 h: hhhhhhhhphmh",
+    "1-6 v: czvvwkgbvmjxvvgv",
+    "3-14 p: pppppppppqpppxpppprp",
+    "2-6 d: ddqrdnddddddddnddd",
+    "8-18 j: gjghwxsjfpcfqmjxqjc",
+    "5-11 g: ftggkgggbvsggb",
+    "1-4 q: bqqqqqqqqqqz",
+    "1-12 x: bgxxxxxmxxxx",
+    "3-5 l: lllll",
+    "3-7 c: zwccrrnfw",
+    "3-4 q: sqdqsr",
+    "3-4 g: gggv",
+    "9-10 h: wnpkttckhh",
+    "3-4 t: ttgp",
+    "3-6 g: glcgtgg",
+    "5-6 w: wwxxnwmpgkppwnwwj",
+    "3-4 f: ffzf",
+    "5-7 z: zdzzfvv",
+    "4-6 p: ppmprgpmcdkcp",
+    "11-12 m: mmmmmmmmmmcm",
+    "2-7 z: zzzzwzz",
+    "7-8 m: mmmmmmms",
+    "4-15 z: zcsnzzfczzmczdzjdzz",
+    "6-7 k: rkrlklk",
+    "7-8 v: dtklkrqhv",
+    "4-5 x: wprlxxhxbjsfx",
+    "4-7 j: cvrjjbxxjfwjjjd",
+    "1-2 g: ggsb",
+    "5-7 k: kkrfgvkqxk",
+    "3-5 q: qqpqq",
+    "7-12 c: cccccxmncnvzbcc",
+    "2-6 h: mhlhgl",
+    "7-8 l: lllllzllbfl",
+    "1-6 f: xnfssk",
+    "12-13 d: dddddddddddgd",
+    "3-7 p: ppkppppg",
+    "8-11 j: mjfwjzfpjgjtnnqh",
+    "9-10 c: qtjcccccjcfclscc",
+    "10-12 b: bbbbbbpbbbbbcb",
+    "1-3 p: rfppppc",
+    "2-5 j: wjjbkbm",
+    "14-15 k: zkkkkkkkkkkkkvk",
+    "4-10 v: jkjslhtdvvtprslsr",
+    "4-10 s: sklrpnszsswls",
+    "8-11 k: dktkkkkkkkzkktq",
+    "10-16 v: rndbqtdxwtkvhvgvhkg",
+    "1-3 w: swwm",
+    "7-8 z: zzpzbzjzz",
+    "2-17 f: hfxrbqffmfdrzfzgsvmq",
+    "1-4 c: cqclc",
+    "5-10 x: xzxxxxxxkx",
+    "1-3 x: xdspcrljk",
+    "13-14 g: kwwbqcmwfwhrgzlg",
+    "7-10 z: xpsxjczspcflhbjk",
+    "6-12 m: sxgpgmbdmvksfpmqcjx",
+    "9-11 c: ccncctcfcvpccxc",
+    "9-11 t: ttxttttwttb",
+    "2-13 x: xxdvxmxxxnxxzx",
+    "17-18 n: nncnnnnnnnnnnnrnvn",
+    "5-12 j: jpjzjpjjjsphjtj",
+    "9-14 n: znnnnnnnnnnvsnnn",
+    "3-4 v: vfdvxwlv",
+    "2-18 w: mwfpnzwlvwmxgsprvhp",
+    "11-13 b: bblbbbbbbbcbbrlc",
+    "1-12 l: llllllrlhspdl",
+    "4-6 p: pphhpp",
+    "5-7 r: rffrwrrqzrzcv",
+    "7-10 z: hfzzzzzzzz",
+    "17-18 q: qqqqqqqqlqqqqqbqqqq",
+    "9-14 s: ssstsjssbsgsss",
+    "12-16 w: wwwwwwwwwwwwwwwgw",
+    "1-4 h: bhhh",
+    "1-2 g: ggggqggrn",
+    "10-12 p: dzpzvvwppphfpl",
+    "3-4 w: wnwp",
+    "2-17 k: pdkknkhkskhndkvkkgwk",
+    "10-13 w: wwwwwwwwzwwwnzw",
+    "5-6 t: crrgctktdmtttldhdlmt",
+    "9-11 h: hhhhhhhhthchhhhh",
+    "2-4 k: jktxzmhhmxjmtkkbphpk",
+    "6-9 g: ggggghggqg",
+    "1-5 j: xjjcj",
+    "1-5 p: xpwnp",
+    "1-11 q: qqqqjqhqqjf",
+    "8-16 p: pppppppnppkpppch",
+    "1-3 k: kkkk",
+    "4-11 s: sssbsslswss",
+    "6-10 s: sfkssshksrsq",
+    "2-4 v: mnvv",
+    "5-6 l: llllllllllll",
+    "3-5 n: nznnn",
+    "4-5 l: nllzwml",
+    "3-5 w: rwwqv",
+    "4-6 x: xxbxvwxdxgbxgx",
+    "10-16 w: wwwwswwwwwwwwwlwqw",
+    "10-12 d: dddddddddddfd",
+    "7-9 q: qwlqzqqsvqq",
+    "5-7 p: fpzpkplppp",
+    "4-11 n: xfnxfjhxvxnnzc",
+    "3-4 x: qfxx",
+    "18-19 g: gggqggdggggggggggmgg",
+    "13-15 c: cccccccccccczcc",
+    "11-12 v: qvvnvvvzcvhtvctvtb",
+    "3-15 d: dpdgmdnfsdbgdddbdmcd",
+    "9-13 j: jjjjcjjprjjjjj",
+    "3-9 t: qtvttxtxtngnhdt",
+    "12-13 d: ddddddddzdddcv",
+    "4-8 h: hhhhhhhbhh",
+    "2-3 x: xrxc",
+    "2-10 l: lmlllllllll",
+    "7-8 d: dddddddrdd",
+    "11-13 c: ccccccccccccd",
+    "1-3 p: pzppmvp",
+    "4-8 b: bjbbvbbzbbbbbqbxxf",
+    "4-5 p: hcprp",
+    "5-9 m: mmmmvmgmmmmj",
+    "2-8 z: zzfzxjfz",
+    "16-17 z: kzzrdzzzwzzzzzzznzzz",
+    "3-4 d: gddsd",
+    "1-9 m: mmkmxmmmjh",
+    "14-15 f: fffffffffffsfqff",
+    "10-11 w: wwwwwwwwwhw",
+    "5-6 q: nqcqqspqq",
+    "2-4 b: bbbj",
+    "8-9 l: llvnqlllwsll",
+    "6-7 t: wttttttt",
+    "9-10 n: nnhnnnnnjnn",
+    "1-2 g: gdgg",
+    "7-8 v: vmvvvvvxv",
+    "8-13 v: vvvvvvvwgvvvvx",
+    "6-7 m: smmfjfmscmpmmp",
+    "3-5 m: mmhbmm",
+    "3-4 t: tttft",
+    "5-12 l: xslklnmkpmbl",
+    "19-20 h: hhhhhhhhhhhhhhhhhhht",
+    "4-8 f: ffffffhlf",
+    "1-3 k: khkg",
+    "15-16 s: sssssssssssssssb",
+    "7-10 j: jzjjjjjjjw",
+    "5-7 w: bszqxhws",
+    "7-8 l: tknllgzl",
+    "10-12 g: gggggggggmggg",
+    "2-4 s: sgns",
+    "11-17 h: bqrhkhhhjhswbhzhkhh",
+    "8-15 d: gdddhdddddgjddddwdd",
+    "8-12 s: gssbjtdsssjtsw",
+    "1-3 p: pfppp",
+    "2-4 t: tttw",
+    "5-10 w: zzcwwwwwwkwwwqws",
+    "1-7 c: ccrmhdchwbr",
+    "7-11 g: xzgnggggrggrg"
+]
