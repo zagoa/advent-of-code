@@ -1,13 +1,5 @@
 export function day3Part1(inputs: Array<string>) {
-    return inputs.reduce((count: number, input: string, index: number) => {
-        const charIndex: number = (index * 3) + 1;
-        input = completeLine(charIndex, input);
-        const char = input[charIndex - 1];
-        if (char === '#' && index !== 0) {
-            count++;
-        }
-        return count;
-    }, 0)
+    return findTreesForOnePattern(inputs, 3, 1);
 }
 
 export function day3Part2(inputs: Array<string>) {
@@ -32,9 +24,9 @@ export function day3Part2(inputs: Array<string>) {
 function findTreesForOnePattern(inputs: Array<string>, x: number, y: number) {
     return inputs.reduce((count: number, input: string, index: number) => {
         if (y === 1 || (y > 1 && index % y === 0)) {
-            const charIndex: number = index * x;
+            const charIndex: number = (index * x) / y;
             input = completeLine(charIndex, input);
-            const char = input[charIndex / y];
+            const char = input[charIndex];
             if (char === '#') {
                 count++;
             }
