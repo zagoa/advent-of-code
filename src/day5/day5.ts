@@ -1,5 +1,26 @@
 export function day5part1(inputs: Array<string>) {
-    const arrayOfIds: Array<number> = inputs.map(input => {
+    return Math.max(...createIdsArray(inputs));
+}
+
+export function day5part2(inputs: Array<string>) {
+    const mapOfIds = new Map()
+    const idsArray = createIdsArray(inputs);
+    const min = Math.min(...idsArray);
+    const max = Math.max(...idsArray);
+    idsArray.forEach(item => mapOfIds.set(item, 1));
+
+    for(let index = min; index <=  max; index++){
+        const itemGet = mapOfIds.get(index);
+        if(!itemGet) {
+            return index;
+        }
+    }
+
+}
+
+
+function createIdsArray(inputs: Array<string>): Array<number> {
+    return inputs.map(input => {
         const rowCode: string = input.substring(0, 6);
         const rowSelectCode: string = input.substring(6, 7);
         const seatCode: string = input.substring(7, 9);
@@ -9,9 +30,6 @@ export function day5part1(inputs: Array<string>) {
         const seat = findSeat(seatCode, seatSelectCode, 0, 7);
         return row * 8 + seat;
     });
-
-    return Math.max(...arrayOfIds);
-
 }
 
 function findRow(rowCode: string, selectCode: string, min: number, max: number): number {
