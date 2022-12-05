@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start:2020": "nodemon ./src/2020/index.ts",
+    "start:2022": "nodemon ./src/2022/index.ts",
+    "start:2022:debug": "nodemon  ./src/2022/index.ts --inspect",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
