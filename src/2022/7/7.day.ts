@@ -59,10 +59,13 @@ export default class Day7 {
 
         const mapOfDirectory = this.generateMapOfDirectory()
         this.computeTotalSizeOfDirectories(mapOfDirectory);
-        const spaceToFree = DISK_SPACE - mapOfDirectory.get('/').totalSize;
+        let diskValue = 0;
+        mapOfDirectory.forEach(value => {
+            diskValue += value.size;
+        });
+        const spaceToFree = SPACE_TO_FREE - (DISK_SPACE - diskValue);
         console.log(`DAY 7 => to free ${spaceToFree} you need to delete`, this.getMinFolderToFreeEnoughSpace(spaceToFree, mapOfDirectory));
     }
-
 
     private generateMapOfDirectory() {
         const data = parseListString(__dirname + '/DAY_7_INPUTS');
@@ -102,7 +105,6 @@ export default class Day7 {
         return directory.files.reduce((total, file) => total + file.size, 0);
     }
 
-
     private computeTotalSizeOfDirectories(mapOfDirectory: Map<string, DirectoryInfo>) {
         mapOfDirectory.forEach((directory, key) => {
             directory.totalSize = this.recursivelyComputeSize(directory, mapOfDirectory);
@@ -131,16 +133,13 @@ export default class Day7 {
     }
 
     private getMinFolderToFreeEnoughSpace(spaceToFree: number, mapOfDirectory: Map<string, DirectoryInfo>) {
-        const candidates = new Array<DirectoryInfo>();
+        let bestCandidate = new DirectoryInfo();
         mapOfDirectory.forEach((value) => {
-            if (value.totalSize >= spaceToFree) {
-                candidates.push(value);
+            if (value.totalSize > spaceToFree && (!bestCandidate.totalSize || value.totalSize < bestCandidate.totalSize)) {
+                bestCandidate = value;
             }
         })
-        const minValue = Math.min(...candidates.map(item => item.totalSize));
-
-
-        return candidates.find(item => item.totalSize === minValue);
+        return bestCandidate;
     }
 
     private getPreviousPath(path: string) {
