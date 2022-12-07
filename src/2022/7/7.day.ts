@@ -1,5 +1,5 @@
 import {parseListString} from "../../utils/parse-input";
-import {Dir} from "fs";
+import {Dir, readFileSync} from "fs";
 
 class FileInfo {
     size: number;
@@ -64,7 +64,7 @@ export default class Day7 {
             diskValue += value.size;
         });
         const spaceToFree = SPACE_TO_FREE - (DISK_SPACE - diskValue);
-        console.log(`DAY 7 => to free ${spaceToFree} you need to delete`, this.getMinFolderToFreeEnoughSpace(spaceToFree, mapOfDirectory));
+        console.log(`DAY 7 => to free ${spaceToFree} you need to delete`, this.getMinFolderToFreeEnoughSpace(spaceToFree, mapOfDirectory).totalSize);
     }
 
     private generateMapOfDirectory() {
@@ -116,7 +116,7 @@ export default class Day7 {
         directoryInfo.dirs.forEach((dir) => {
             if (mapOfDirectory.has(this.buildNewPath(directoryInfo.path, dir))) {
                 const directory = mapOfDirectory.get(this.buildNewPath(directoryInfo.path, dir));
-                previousSize += this.recursivelyComputeSize(directory, mapOfDirectory, previousSize)
+                previousSize = this.recursivelyComputeSize(directory, mapOfDirectory, previousSize)
             }
         })
         return previousSize;
@@ -132,10 +132,10 @@ export default class Day7 {
         return globalSize;
     }
 
-    private getMinFolderToFreeEnoughSpace(spaceToFree: number, mapOfDirectory: Map<string, DirectoryInfo>) {
+    private getMinFolderToFreeEnoughSpace(spaceToFree: number, mapOfDirectory: Map<string, DirectoryInfo>): DirectoryInfo {
         let bestCandidate = new DirectoryInfo();
         mapOfDirectory.forEach((value) => {
-            if (value.totalSize > spaceToFree && (!bestCandidate.totalSize || value.totalSize < bestCandidate.totalSize)) {
+            if (value.totalSize >= spaceToFree && (!bestCandidate.totalSize || value.totalSize < bestCandidate.totalSize)) {
                 bestCandidate = value;
             }
         })
