@@ -7,7 +7,9 @@
     "start:2020": "nodemon ./src/2020/index.ts",
     "start:2022": "nodemon ./src/2022/index.ts",
     "start:2022:debug": "nodemon  ./src/2022/index.ts --inspect",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx rome format src/ --write",
+    "lint": "npx rome check src/"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^14.14.10",
     "nodemon": "^2.0.6",
+    "rome": "^11.0.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.1.2"
   }
