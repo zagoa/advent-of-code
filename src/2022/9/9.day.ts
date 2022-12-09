@@ -33,7 +33,7 @@ export default class Day9 {
 	}
 
 	find_number_of_visited_position_by_the_tail() {
-		const inputs = parseListString(__dirname + "/DAY_9_INPUTS");
+		const inputs = parseListString(`${__dirname}/DAY_9_INPUTS`);
 
 		let rope = new Rope(2);
 		let ropePart2 = new Rope(10);
@@ -144,7 +144,7 @@ export default class Day9 {
 			}
 			draw += [...grid[x]] + "\n";
 		}
-		fs.writeFileSync(__dirname + "/" + name + ".txt", draw);
+		fs.writeFileSync(`${__dirname}/${name}.txt`, draw);
 		console.log("Visualization written", name);
 	}
 }

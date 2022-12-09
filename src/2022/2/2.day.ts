@@ -50,7 +50,7 @@ export class Day2 {
 	 * In this example, if you were to follow the strategy guide, you would get a total score of 15 (8 + 1 + 6).
 	 */
 	total_with_perfect_plan() {
-		const couples = parseListString(__dirname + "/DAY_2_INPUTS");
+		const couples = parseListString(`${__dirname}/DAY_2_INPUTS`);
 
 		const result = couples.reduce((points, couple) => {
 			const coupleSplit = couple.split(" ");
@@ -77,7 +77,7 @@ export class Day2 {
 	 * Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?
 	 */
 	total_following_plan_with_goal_for_result_round() {
-		const couples = parseListString(__dirname + "/DAY_2_INPUTS");
+		const couples = parseListString(`${__dirname}/DAY_2_INPUTS`);
 
 		const result = couples.reduce((points, couple) => {
 			const coupleSplit = couple.split(" ");

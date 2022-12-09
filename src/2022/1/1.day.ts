@@ -37,7 +37,7 @@ export class Day1 {
 	 * Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
 	 */
 	max_calories() {
-		const data = parseListNumber(__dirname + "/DAY_1_INPUTS.txt");
+		const data = parseListNumber(`${__dirname}/DAY_1_INPUTS.txt`);
 		let max = 0;
 		data.reduce((previous, dataValue) => {
 			if (isNaN(dataValue)) {
@@ -61,7 +61,7 @@ export class Day1 {
 	 * Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
 	 */
 	total_top_three_max_calories() {
-		const data = parseListNumber(__dirname + "/DAY_1_INPUTS.txt");
+		const data = parseListNumber(`${__dirname}/DAY_1_INPUTS.txt`);
 		const sums = [];
 		data.reduce((previous, dataValue) => {
 			if (isNaN(dataValue)) {

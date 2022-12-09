@@ -35,7 +35,7 @@ export class Day4 {
 	 * In how many assignment pairs does one range fully contain the other?
 	 */
 	how_many_range_contain_fully_the_other() {
-		const arrayOfCoupleRanges = parseListString(__dirname + "/DAY_4_INPUTS");
+		const arrayOfCoupleRanges = parseListString(`${__dirname}/DAY_4_INPUTS`);
 		const result = arrayOfCoupleRanges.reduce((total, couple) => {
 			const ranges = couple.split(",");
 			const leftValues = ranges[0].split("-");
@@ -72,7 +72,7 @@ export class Day4 {
 	 * In how many assignment pairs do the ranges overlap?
 	 */
 	how_many_couple_overlaps() {
-		const arrayOfCoupleRanges = parseListString(__dirname + "/DAY_4_INPUTS");
+		const arrayOfCoupleRanges = parseListString(`${__dirname}/DAY_4_INPUTS`);
 		const result = arrayOfCoupleRanges.reduce((total, couple) => {
 			const ranges = couple.split(",");
 			const leftValues = ranges[0].split("-");

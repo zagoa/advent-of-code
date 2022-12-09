@@ -86,7 +86,7 @@ function numberBetweenRange(
 	max: number,
 ): boolean {
 	if (!isNaN(size)) {
-		return ("" + input).length === size && +input >= min && +input <= max;
+		return `${input}`.length === size && +input >= min && +input <= max;
 	} else {
 		return +input >= min && +input <= max;
 	}

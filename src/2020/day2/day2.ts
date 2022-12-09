@@ -3,11 +3,11 @@ import { DAY2_INPUTS } from "./day2_inputs";
 export function day2Part1(): number {
 	return DAY2_INPUTS.reduce((count: number, input: string) => {
 		const items = input.split(/:|-|\s/).filter((item) => !!item);
-		let min: string,
-			max: string,
-			letter: string,
-			expression: string,
-			occurrences: number;
+		let min: string;
+		let max: string;
+		let letter: string;
+		let expression: string;
+		let occurrences: number;
 		[min, max, letter, expression] = [...items];
 		occurrences = [...expression].reduce(
 			(countLetter: number, letterFound: string) => {
@@ -28,11 +28,11 @@ export function day2Part1(): number {
 export function day2Part2(): number {
 	return DAY2_INPUTS.reduce((count: number, input: string) => {
 		const items = input.split(/:|-|\s/).filter((item) => !!item);
-		let min: string,
-			max: string,
-			letter: string,
-			expression: string,
-			occurrences: number;
+		let min: string;
+		let max: string;
+		let letter: string;
+		let expression: string;
+		let occurrences: number;
 		[min, max, letter, expression] = [...items];
 		const expressionTrim = expression.trim();
 		const char1 = expressionTrim[+min - 1];

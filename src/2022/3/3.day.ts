@@ -33,7 +33,7 @@ export class Day3 {
 	 * Find the item type that appears in both compartments of each rucksack. What is the sum of the priorities of those item types?
 	 */
 	total_priorities_of_item() {
-		const rucksacks = parseListString(__dirname + "/DAY_3_INPUTS");
+		const rucksacks = parseListString(`${__dirname}/DAY_3_INPUTS`);
 		const result = rucksacks.reduce((total, rucksack) => {
 			const firstRucksack = rucksack.slice(0, rucksack.length / 2);
 			const secondRucksack = rucksack.slice(rucksack.length / 2);
@@ -71,7 +71,7 @@ export class Day3 {
 	 * Find the item type that corresponds to the badges of each three-Elf group. What is the sum of the priorities of those item types?
 	 */
 	total_priorities_for_a_group_of_bag() {
-		const rucksacks = parseListString(__dirname + "/DAY_3_INPUTS");
+		const rucksacks = parseListString(`${__dirname}/DAY_3_INPUTS`);
 		let result = 0;
 		for (let index = 0; index < rucksacks.length; index = index + 3) {
 			const bags = [];

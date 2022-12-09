@@ -38,7 +38,7 @@ export default class Day8 {
 	 * Consider your map; how many trees are visible from outside the grid?
 	 */
 	how_many_trees_are_visible_from_outside() {
-		const data = parseListString(__dirname + "/DAY_8_INPUTS");
+		const data = parseListString(`${__dirname}/DAY_8_INPUTS`);
 		const grid = this.buildGrid(data);
 		const count = this.countNumberOfVisibleTree(grid);
 		console.assert(count === 1647, "You break the working code");
@@ -79,7 +79,7 @@ export default class Day8 {
 	 * This tree's scenic score is 8 (2 * 2 * 1 * 2); this is the ideal spot for the tree house.
 	 */
 	get_highest_scenic_score() {
-		const data = parseListString(__dirname + "/DAY_8_INPUTS");
+		const data = parseListString(`${__dirname}/DAY_8_INPUTS`);
 		const grid = this.buildGrid(data);
 
 		let scenicScores = new Array<number>();

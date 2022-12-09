@@ -27,7 +27,7 @@ export default class Day6 {
 	 * How many characters need to be processed before the first start-of-packet marker is detected?
 	 */
 	find_when_message_begin() {
-		const data = parseListString(__dirname + "/DAY_6_INPUTS")[0];
+		const data = parseListString(`${__dirname}/DAY_6_INPUTS`)[0];
 		const SEQ_LENGTH = 4;
 		const startSequenceIndex = this.findSequenceIndexOfUniqueChar(
 			data,
@@ -40,7 +40,7 @@ export default class Day6 {
 	}
 
 	find_when_message_begin_with_14th_sequence() {
-		const data = parseListString(__dirname + "/DAY_6_INPUTS")[0];
+		const data = parseListString(`${__dirname}/DAY_6_INPUTS`)[0];
 		const SEQ_LENGTH = 14;
 		const startSequenceIndex = this.findSequenceIndexOfUniqueChar(
 			data,

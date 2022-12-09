@@ -73,7 +73,7 @@ export default class Day7 {
 	}
 
 	private generateMapOfDirectory() {
-		const data = parseListString(__dirname + "/DAY_7_INPUTS");
+		const data = parseListString(`${__dirname}/DAY_7_INPUTS`);
 		const directoryMap = new Map<string, DirectoryInfo>();
 		let currentDir = new DirectoryInfo();
 		let currentPath = "";
@@ -174,19 +174,16 @@ export default class Day7 {
 
 	private getPreviousPath(path: string) {
 		const splitPath = path.split("/");
-		return (
-			"/" +
-			splitPath
-				.filter((value) => !!value)
-				.slice(0, splitPath.length - 2)
-				.join("/")
-		);
+		return `/${splitPath
+			.filter((value) => !!value)
+			.slice(0, splitPath.length - 2)
+			.join("/")}`;
 	}
 
 	private buildNewPath(currentPath: string, newDirName: string) {
 		if (currentPath) {
 			if (currentPath.length > 1) {
-				return currentPath + "/" + newDirName;
+				return `${currentPath}/${newDirName}`;
 			} else {
 				return currentPath + newDirName;
 			}

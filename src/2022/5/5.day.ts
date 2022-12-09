@@ -143,7 +143,7 @@ export default class Day5 {
 	}
 
 	parseInput(): { crates: Array<string>; commandsAsString: Array<string> } {
-		const data = parseListString(__dirname + "/DAY_5_INPUTS");
+		const data = parseListString(`${__dirname}/DAY_5_INPUTS`);
 		const splitIndex = data.findIndex((line) => line === "");
 		return {
 			crates: data.slice(0, splitIndex),
