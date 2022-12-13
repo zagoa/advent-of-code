@@ -80,6 +80,8 @@ export default class Day10 {
 			});
 		});
 
+		console.log("Day 10 => word to find");
+
 		for (let index = 0; index < CRT.length / 40; index++) {
 			console.log(CRT.slice(index * 40, index * 40 + 39).join(""));
 		}
