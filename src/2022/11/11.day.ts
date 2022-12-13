@@ -9,6 +9,7 @@ class Monkey {
     ifTrueThrowTo: number;
     ifFalseThrowTo: number;
     itemsInspected = 0;
+    divideBy: bigint;
 
     constructor(monkeyNumber: number) {
         this.monkeyNumber = monkeyNumber;
@@ -20,7 +21,7 @@ export default class Day11 {
 
     constructor() {
         this.get_level_of_business_20_rounds();
-        //this.get_level_of_business_10000_rounds(); skip for now the compute time is too long
+        this.get_level_of_business_10000_rounds(); //skip for now the compute time is too long
     }
 
     get_level_of_business_20_rounds() {
@@ -47,10 +48,11 @@ export default class Day11 {
         const data = parseListString(`${__dirname}/DAY_11_INPUTS`);
         //const data = parseListString(`${__dirname}/UNIT_TEST_DATA`);
         const monkeys = this.parseMonkeyData(data);
+        const denominator = monkeys.map(monkey => monkey.divideBy).reduce((total, value) => total * value);
 
         for (let round = 0; round < 10_000; round++) {
             monkeys.forEach((monkey, index, arrayMonkeys) => {
-                this.doAMonkeyComplexRound(arrayMonkeys[index], arrayMonkeys);
+                this.doAMonkeyComplexRound(arrayMonkeys[index], arrayMonkeys, denominator);
             });
         }
 
@@ -88,10 +90,11 @@ export default class Day11 {
         monkey.items = [];
     }
 
-    doAMonkeyComplexRound(monkey: Monkey, arrayOfMonkeys: Array<Monkey>) {
+    doAMonkeyComplexRound(monkey: Monkey, arrayOfMonkeys: Array<Monkey>, denominator: bigint) {
         monkey.items.forEach((item, index, itemsArray) => {
-            const opsResult = monkey.operationFunc(item);
+            const opsResult = monkey.operationFunc(item) % denominator;
             const isConditionTrue = monkey.conditionFunc(opsResult);
+
             if (isConditionTrue) {
                 arrayOfMonkeys
                     .find(
@@ -147,8 +150,9 @@ export default class Day11 {
                 }
 
             };
+            monkey.divideBy = BigInt(data[index + 3].split("by")[1])
             monkey.conditionFunc = (value: bigint) =>
-                value % BigInt(data[index + 3].split("by")[1]) === BigInt(0);
+                value % monkey.divideBy === BigInt(0);
             monkey.ifTrueThrowTo = parseInt(data[index + 4].split("monkey")[1]);
             monkey.ifFalseThrowTo = parseInt(data[index + 5].split("monkey")[1]);
 
