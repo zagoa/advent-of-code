@@ -7,6 +7,7 @@ import Day6 from "./6/6.day";
 import Day7 from "./7/7.day";
 import Day8 from "./8/8.day";
 import Day9 from "./9/9.day";
+import Day10 from "./10/10.day";
 
 new Day1();
 new Day2();
@@ -17,3 +18,4 @@ new Day6();
 new Day7();
 new Day8();
 new Day9();
+new Day10();

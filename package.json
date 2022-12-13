@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:2020": "nodemon ./src/2020/index.ts",
-    "start:2022": "nodemon ./src/2022/index.ts --exec 'npm run lint'",
+    "start:2022": "nodemon ./src/2022/index.ts",
     "start:2022:debug": "npm run start:2022 -- --inspect",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "npx rome format src/ --write",
