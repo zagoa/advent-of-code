@@ -1,11 +1,11 @@
 import {parseListString} from "../../utils/parse-input";
+import {BigIntStats} from "fs";
 
 class Monkey {
     monkeyNumber: number;
-    items: Array<number>;
-    operationFunc: (item) => number;
+    items: Array<bigint>;
+    operationFunc: (item) => bigint;
     conditionFunc: (item) => boolean;
-    itemDividedValueFunc: (item) => number;
     ifTrueThrowTo: number;
     ifFalseThrowTo: number;
     itemsInspected = 0;
@@ -20,7 +20,7 @@ export default class Day11 {
 
     constructor() {
         this.get_level_of_business_20_rounds();
-        this.get_level_of_business_10000_rounds();
+        //this.get_level_of_business_10000_rounds(); skip for now the compute time is too long
     }
 
     get_level_of_business_20_rounds() {
@@ -114,8 +114,8 @@ export default class Day11 {
     }
 
 
-    decreaseWorryLevel(value: number): number {
-        return Math.floor(value / 3)
+    decreaseWorryLevel(value: bigint): bigint {
+        return BigInt(value / BigInt(3))
     }
 
     parseMonkeyData(data: Array<string>): Array<Monkey> {
@@ -125,15 +125,30 @@ export default class Day11 {
             monkey.items = data[index + 1]
                 .split(":")[1]
                 .split(",")
-                .map((value) => parseInt(value));
-            monkey.operationFunc = (value: number) => {
-                let old = value;
-                return eval(data[index + 2].split("=")[1]);
+                .map((value) => BigInt(value));
+            monkey.operationFunc = (value: bigint) => {
+                let bigInt1: bigint, bigInt2: bigint, ops: string;
+                const sentence = data[index + 2].split("=")[1].trim().split(' ');
+                bigInt1 = sentence[0] === 'old' ? value : BigInt(sentence[0]);
+                bigInt2 = sentence[2] === 'old' ? value : BigInt(sentence[2]);
+                ops = sentence[1];
+
+                switch (ops) {
+                    case '+':
+                        return bigInt1 + bigInt2;
+                    case '-':
+                        return bigInt1 - bigInt2;
+                    case '*':
+                        return bigInt1 * bigInt2;
+                    case '/':
+                        return bigInt1 / bigInt2;
+                    default:
+                        break;
+                }
+
             };
-            monkey.conditionFunc = (value: number) =>
-                value % parseInt(data[index + 3].split("by")[1]) === 0;
-            monkey.itemDividedValueFunc = (value: number) =>
-                Math.floor(value / parseInt(data[index + 3].split("by")[1]));
+            monkey.conditionFunc = (value: bigint) =>
+                value % BigInt(data[index + 3].split("by")[1]) === BigInt(0);
             monkey.ifTrueThrowTo = parseInt(data[index + 4].split("monkey")[1]);
             monkey.ifFalseThrowTo = parseInt(data[index + 5].split("monkey")[1]);
 
