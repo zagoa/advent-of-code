@@ -1,126 +1,292 @@
-import {parseListString} from "../../utils/parse-input";
+import { parseListString } from "../../utils/parse-input";
 
-function generateNormalizedId(data: string, rowIndex: number, colIndex: number) {
-    return data === 'E' ? SquareWithInterest.END : (data === 'S' ? SquareWithInterest.START : rowIndex + '-' + colIndex);
+function generateNormalizedId(
+	data: string,
+	rowIndex: number,
+	colIndex: number,
+) {
+	return data === "E"
+		? SquareWithInterest.END
+		: data === "S"
+		? SquareWithInterest.START
+		: rowIndex + "-" + colIndex;
 }
 
 class Square {
-    neighboursIds: Array<string> = new Array<string>();
-    value: string;
-    neighboursIdsOfStepOne: Array<string> = new Array<string>();
-    rowIndex: number;
-    colIndex: number;
-    id: string;
+	neighboursIds: Array<string> = new Array<string>();
+	value: string;
+	neighboursIdsOfStepOne: Array<string> = new Array<string>();
+	rowIndex: number;
+	colIndex: number;
+	id: string;
+	visited: boolean;
 
-    constructor(value: string, rowIndex: number, colIndex: number) {
-        this.value = value;
-        this.rowIndex = rowIndex;
-        this.colIndex = colIndex;
-        this.id = generateNormalizedId(value, rowIndex, colIndex);
-    }
-
+	constructor(value: string, rowIndex: number, colIndex: number) {
+		this.value = value;
+		this.rowIndex = rowIndex;
+		this.colIndex = colIndex;
+		this.id = generateNormalizedId(value, rowIndex, colIndex);
+	}
 }
 
 enum SquareWithInterest {
-    END = 'END',
-    START = 'START'
+	END = "END",
+	START = "START",
 }
 
-
 export default class Day12 {
+	constructor() {
+		this.get_shortest_path();
+		this.get_shortest_path_by_choosing_starting_point();
+	}
 
+	get_shortest_path() {
+		const data = parseListString(`${__dirname}/DAY_12_INPUTS`);
+		//const data = parseListString(`${__dirname}/UNIT_TEST_DATA`);
+		const squares: Map<string, Square> = this.preProcess(data);
+		const start = squares.get(SquareWithInterest.START);
 
-    constructor() {
-        this.get_shortest_path()
-    }
+		//let paths = this.recursivelyGetPath(start, new Set<string>(), squares, []); // it works for the UNIT TEST but for real data it's too complex and too slow
+		/**
+		 * const shortest = paths.sort((a, b) => a.size - b.size)[0]
+		 *  this.visualizePath(data, shortest, squares);
+		 */
 
-    get_shortest_path() {
-        const data = parseListString(`${__dirname}/DAY_12_INPUTS`);
-        //const data = parseListString(`${__dirname}/UNIT_TEST_DATA`);
-        const squares: Map<string, Square> = this.preProcess(data);
-        const start = squares.get(SquareWithInterest.START);
+		this.visualizePath(
+			data,
+			this.dijkstraImplementation(start, squares).get(SquareWithInterest.END)
+				.from,
+			squares,
+		);
+		console.log(
+			"Day 12 => shortest path length",
+			this.dijkstraImplementation(start, squares).get(SquareWithInterest.END)
+				.distance,
+		);
+	}
 
-        let paths = this.recursivelyGetPath(start, new Set<string>(), squares, []);
+	get_shortest_path_by_choosing_starting_point() {
+		const data = parseListString(`${__dirname}/DAY_12_INPUTS`);
+		//const data = parseListString(`${__dirname}/UNIT_TEST_DATA`);
+		/**const squares: Map<string, Square> = this.preProcess(data, true);
+         const results = Array.from(this.dijkstraImplementation(squares.get(SquareWithInterest.END), squares).values());
+         //results.forEach(result => this.visualizePath(data, result.from, squares));
+         console.log(results.filter(item => squares.get(item.id).value === 'a'))
+         **/
 
-        const shortest = paths.sort((a, b) => a.size - b.size)[0]
-        this.visualizePath(data, shortest, squares);
-        console.log('Day 12 => shortest path length', shortest);
-    }
+		const squares: Map<string, Square> = this.preProcess(data);
+		let results = new Array<number>();
 
-    recursivelyGetPath(square: Square, path: Set<string>, allSquares: Map<string, Square>, allPaths: Array<Set<string>>): Array<Set<string>> {
-        path.add(square.id);
-        for (let i = 0; i < square.neighboursIdsOfStepOne.length; i++) {
-            let squareNeighbourId = square.neighboursIdsOfStepOne[i];
-            if (!path.has(squareNeighbourId)) {
-                const nextSquare = allSquares.get(squareNeighbourId);
-                if (nextSquare.id === SquareWithInterest.END) {
-                    allPaths.push(path)
-                    return allPaths;
-                } else {
-                    this.recursivelyGetPath(nextSquare, new Set<string>([...path]), allSquares, allPaths);
-                }
-            }
-        }
-        return allPaths;
-    }
+		const start = Date.now();
 
-    preProcess(data: Array<string>): Map<string, Square> {
-        const squares = new Map<string, Square>();
-        for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
-            for (let colIndex = 0; colIndex < data[rowIndex].length; colIndex++) {
-                const currentSquare = data[rowIndex][colIndex];
-                const squareObject = new Square(currentSquare, rowIndex, colIndex);
-                const neighbours = [
-                    this.getIdDefined(data, rowIndex + 1, colIndex),
-                    this.getIdDefined(data, rowIndex - 1, colIndex),
-                    this.getIdDefined(data, rowIndex, colIndex + 1),
-                    this.getIdDefined(data, rowIndex, colIndex - 1),
-                ].filter(item => item);
-                squareObject.neighboursIds = [...neighbours] ?? [];
-                squares.set(squareObject.id, squareObject);
-            }
-        }
+		squares.forEach((square) => {
+			if (square.value === "a" || square.value === "S") {
+				const hasBNeighbour = square.neighboursIdsOfStepOne.find(
+					(item) => squares.get(item).value === "b",
+				);
+				if (hasBNeighbour) {
+					results.push(
+						this.dijkstraImplementation(square, squares).get(
+							SquareWithInterest.END,
+						)?.distance,
+					);
+				}
+			}
+		});
+		results = results.filter((result) => result);
+		// need a little piece of optimization
+		console.log(
+			`Day 12 => shortest path length for a starting point chosen ${Math.min(
+				...results,
+			)} in ${Date.now() - start}ms`,
+		);
+	}
 
-        squares.forEach(squareObject => {
-            squareObject.neighboursIdsOfStepOne = squareObject.neighboursIds.filter(item => {
-                return this.canAccessSquare(squareObject.value, squares.get(item).value)
-            });
-        })
+	dijkstraImplementation(start: Square, squares: Map<string, Square>) {
+		const distances = new Map<
+			string,
+			{ id: string; distance: number; visited: boolean; from?: Array<string> }
+		>();
 
+		let currentSquare = start;
+		let currentNodeDistance = 0;
+		// initialization
+		distances.set(start.id, {
+			id: start.id,
+			distance: currentNodeDistance,
+			visited: true,
+			from: [],
+		});
 
-        return squares;
+		for (let neighboursOfStepOne of currentSquare.neighboursIdsOfStepOne) {
+			distances.set(neighboursOfStepOne, {
+				id: neighboursOfStepOne,
+				distance: currentNodeDistance + 1,
+				visited: false,
+				from: [currentSquare.id],
+			});
+		}
 
-    }
+		// elect next shortest path
+		let applyAlgo = true;
+		while (applyAlgo) {
+			let nextNode = Array.from(distances.values())
+				.sort((a, b) => a.distance - b.distance)
+				.find((item) => !item.visited);
+			if (!nextNode) {
+				applyAlgo = false;
+				break;
+			}
+			currentSquare = squares.get(nextNode.id);
+			distances.set(nextNode.id, {
+				...nextNode,
+				visited: true,
+			});
 
-    getIdDefined(data, rowIndex, colIndex) {
-        if (data[rowIndex] && data[rowIndex][colIndex]) {
-            return generateNormalizedId(data[rowIndex][colIndex], rowIndex, colIndex);
-        } else {
-            return undefined;
-        }
-    }
+			for (let neighboursOfStepOne of currentSquare.neighboursIdsOfStepOne) {
+				let newDistance = nextNode.distance + 1;
+				if (distances.has(neighboursOfStepOne)) {
+					distances.set(neighboursOfStepOne, {
+						...distances.get(neighboursOfStepOne),
+						distance:
+							distances.get(neighboursOfStepOne).distance > newDistance
+								? newDistance
+								: distances.get(neighboursOfStepOne).distance,
+						from: nextNode.from.concat([nextNode.id]),
+					});
+				} else {
+					distances.set(neighboursOfStepOne, {
+						id: neighboursOfStepOne,
+						distance: newDistance,
+						visited: false,
+						from: nextNode.from.concat([nextNode.id]),
+					});
+				}
+			}
+		}
 
-    private visualizePath(data: Array<string>, path: Set<string>, mapOfIds: Map<string, Square>) {
-        const dataCopy = Object.assign([], [...data]);
-        path.forEach((id, index) => {
-            const square = mapOfIds.get(id);
-            dataCopy[square.rowIndex] = dataCopy[square.rowIndex].substring(0, square.colIndex) + '@' + dataCopy[square.rowIndex].substring(square.colIndex + 1);
+		return distances;
+	}
 
-            console.log('\n')
-            dataCopy.forEach(line => {
-                console.log(line)
-            })
+	recursivelyGetPath(
+		square: Square,
+		path: Set<string>,
+		allSquares: Map<string, Square>,
+		allPaths: Array<Set<string>>,
+	): Array<Set<string>> {
+		path.add(square.id);
+		for (let i = 0; i < square.neighboursIdsOfStepOne.length; i++) {
+			let squareNeighbourId = square.neighboursIdsOfStepOne[i];
+			if (!path.has(squareNeighbourId)) {
+				const nextSquare = allSquares.get(squareNeighbourId);
+				if (nextSquare.id === SquareWithInterest.END) {
+					allPaths.push(path);
+					return allPaths;
+				} else {
+					this.recursivelyGetPath(
+						nextSquare,
+						new Set<string>([...path]),
+						allSquares,
+						allPaths,
+					);
+				}
+			}
+		}
+		return allPaths;
+	}
 
-        })
+	preProcess(
+		data: Array<string>,
+		goDownSlowly: boolean = false,
+	): Map<string, Square> {
+		const squares = new Map<string, Square>();
+		for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
+			for (let colIndex = 0; colIndex < data[rowIndex].length; colIndex++) {
+				const currentSquare = data[rowIndex][colIndex];
+				const squareObject = new Square(currentSquare, rowIndex, colIndex);
+				const neighbours = [
+					this.getIdDefined(data, rowIndex + 1, colIndex),
+					this.getIdDefined(data, rowIndex - 1, colIndex),
+					this.getIdDefined(data, rowIndex, colIndex + 1),
+					this.getIdDefined(data, rowIndex, colIndex - 1),
+				].filter((item) => item);
+				squareObject.neighboursIds = [...neighbours] ?? [];
+				squares.set(squareObject.id, squareObject);
+			}
+		}
 
+		squares.forEach((squareObject) => {
+			squareObject.neighboursIdsOfStepOne = squareObject.neighboursIds.filter(
+				(item) => {
+					return goDownSlowly
+						? this.canGoDownOneByOne(
+								squareObject.value,
+								squares.get(item).value,
+						  )
+						: this.canAccessSquare(squareObject.value, squares.get(item).value);
+				},
+			);
+		});
 
-    }
+		return squares;
+	}
 
-    private canAccessSquare(from: string, to: string) {
-        if (to === 'S' || from === 'S') {
-            return true;
-        } else if (to == 'E') {
-            return 'z'.charCodeAt(0) <= from.charCodeAt(0) + 1 && Math.abs('z'.charCodeAt(0) - from.charCodeAt(0)) <= 1
-        } else return to.charCodeAt(0) <= from.charCodeAt(0) + 1 && Math.abs(to.charCodeAt(0) - from.charCodeAt(0)) <= 1;
-    }
+	getIdDefined(data, rowIndex, colIndex) {
+		if (data[rowIndex] && data[rowIndex][colIndex]) {
+			return generateNormalizedId(data[rowIndex][colIndex], rowIndex, colIndex);
+		} else {
+			return undefined;
+		}
+	}
+
+	private visualizePath(
+		data: Array<string>,
+		path: Array<string>,
+		mapOfIds: Map<string, Square>,
+		eachStep: boolean = false,
+	) {
+		const dataCopy = Object.assign([], [...data]);
+		path.forEach((id, index) => {
+			const square = mapOfIds.get(id);
+			dataCopy[square.rowIndex] =
+				dataCopy[square.rowIndex].substring(0, square.colIndex) +
+				"@" +
+				dataCopy[square.rowIndex].substring(square.colIndex + 1);
+
+			if (eachStep) {
+				console.log("\n");
+				dataCopy.forEach((line) => {
+					console.log(line);
+				});
+			}
+		});
+
+		if (!eachStep) {
+			console.log("\n");
+			dataCopy.forEach((line) => {
+				console.log(line);
+			});
+		}
+	}
+
+	private canAccessSquare(from: string, to: string): boolean {
+		if (to === "S" || from === "S" || from === "E") {
+			return true;
+		} else if (to === "E") {
+			return "z".charCodeAt(0) <= from.charCodeAt(0) + 1;
+		} else return to.charCodeAt(0) <= from.charCodeAt(0) + 1;
+	}
+
+	private canGoDownOneByOne(from: string, to: string): boolean {
+		from = from === "E" ? "z" : from;
+		to = to === "E" ? "z" : to;
+
+		from = from === "S" ? "a" : from;
+		to = to === "S" ? "a" : to;
+
+		return (
+			to.charCodeAt(0) === from.charCodeAt(0) ||
+			from.charCodeAt(0) === to.charCodeAt(0) + 1
+		);
+	}
 }
