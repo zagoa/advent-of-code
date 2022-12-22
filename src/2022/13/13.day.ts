@@ -4,6 +4,7 @@ import { isUndefined } from "util";
 export default class Day13 {
 	constructor() {
 		this.part1();
+		this.part2();
 	}
 
 	part1() {
@@ -33,7 +34,26 @@ export default class Day13 {
 		);
 	}
 
-	part2() {}
+	part2() {
+		//const data = parseListString(`${__dirname}/UNIT_TEST_DATA`).filter(item => item);
+		const data = parseListString(`${__dirname}/DAY_13_INPUTS`).filter(
+			(item) => item,
+		);
+
+		const dividerPacket2 = "[[2]]";
+		const dividerPacket6 = "[[6]]";
+		data.push(dividerPacket2);
+		data.push(dividerPacket6);
+		data.sort((left, right) =>
+			this.isPairOnTheRightOrder(JSON.parse(left), JSON.parse(right)) ? -1 : 1,
+		);
+		console.log(
+			`Day 13 => multiplication of the two positions of dividers result in ${
+				(1 + data.findIndex((item) => item === dividerPacket2)) *
+				(1 + data.findIndex((item) => item === dividerPacket6))
+			}`,
+		);
+	}
 
 	private convertToArrayIfNeeded(
 		item: number | Array<number>,
@@ -56,7 +76,7 @@ export default class Day13 {
 		) {
 			const leftItem: number | Array<number> = leftList[index];
 			const rightItem: number | Array<number> = rightList[index];
-
+			// check undefined to avoid problem with !(rightItem) => !0 => true but it's defined :/
 			if (rightItem === undefined) {
 				return false;
 			} else if (leftItem === undefined) {
