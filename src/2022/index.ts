@@ -10,6 +10,7 @@ import Day9 from "./9/9.day";
 import Day10 from "./10/10.day";
 import Day11 from "./11/11.day";
 import Day12 from "./12/12.day";
+import Day13 from "./13/13.day";
 
 new Day1();
 new Day2();
@@ -23,3 +24,4 @@ new Day9();
 new Day10();
 new Day11();
 new Day12();
+new Day13();
