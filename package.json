@@ -7,7 +7,7 @@
     "start:2020": "nodemon ./src/2020/index.ts",
     "start:2022": "nodemon ./src/2022/index.ts",
     "start:2022:debug": "npm run start:2022 -- --inspect",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "format": "npx rome format src/ --write",
     "lint": "npx rome check src/",
     "lint:fix": "npm run lint -- --apply",
@@ -17,9 +17,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^29.5.1",
     "@types/node": "^14.14.10",
+    "jest": "^29.5.0",
     "nodemon": "^2.0.6",
     "rome": "^11.0.0",
+    "ts-jest": "^29.1.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.1.2"
   }

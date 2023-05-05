@@ -1,7 +1,7 @@
-import {Day1} from "./1/1.day";
-import {Day2} from "./2/2.day";
-import {Day3} from "./3/3.day";
-import {Day4} from "./4/4.day";
+import { Day1 } from "./1/1.day";
+import { Day2 } from "./2/2.day";
+import { Day3 } from "./3/3.day";
+import { Day4 } from "./4/4.day";
 import Day5 from "./5/5.day";
 import Day6 from "./6/6.day";
 import Day7 from "./7/7.day";
@@ -12,7 +12,7 @@ import Day11 from "./11/11.day";
 import Day12 from "./12/12.day";
 import Day13 from "./13/13.day";
 import Day14 from "./14/14.day";
-
+import Day16 from "./16/16.day";
 new Day1();
 new Day2();
 new Day3();
@@ -27,3 +27,5 @@ new Day11();
 new Day12();
 new Day13();
 new Day14();
+
+new Day16();
